@@ -1,0 +1,3773 @@
+if (A_IsAdmin = false) {
+Run *RunAs "%A_ScriptFullPath%" ,, UseErrorLevel
+}
+#SingleInstance,Force
+#MaxHotkeysPerInterval 999999999999999
+#HotkeyInterval 99000000
+#KeyHistory 0
+#NoEnv
+SetWinDelay, -1
+SetControlDelay, -1
+SetMouseDelay, -1
+SetBatchLines, -1
+Process, priority,, Real time
+FileName = %A_Temp%\Goky\Messages.txt
+File := FileOpen(FileName, "w")
+File.Length := 0, File.Close()
+SetTimer, StartStop5, -10
+SetTimer, StartStop, -10
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+FileCreateDir, %A_Temp%\Goky
+FileSetAttrib, +H, %A_Temp%\Goky
+FileInstall, C:\Goky\Chec1.jpg, %A_Temp%\Goky\Chec1.jpg
+FileInstall, C:\Goky\Check1.png, %A_Temp%\Goky\Check1.png
+FileInstall, C:\Goky\Check.png, %A_Temp%\Goky\Check.png
+FileInstall, C:\Goky\Home.png, %A_Temp%\Goky\Home.png
+FileInstall, C:\Goky\Home2.png, %A_Temp%\Goky\Home2.png
+FileInstall, C:\Goky\Bor2.png, %A_Temp%\Goky\Bor2.png
+FileInstall, C:\Goky\One.ico, %A_Temp%\Goky\One.ico
+FileInstall, C:\Goky\Borders.png, %A_Temp%\Goky\Borders.png
+FileInstall, C:\Goky\Borders3.png, %A_Temp%\Goky\Borders3.png
+FileInstall, C:\Goky\Borders4.png, %A_Temp%\Goky\Borders4.png
+FileInstall, C:\Goky\Rain.Gif, %A_Temp%\Goky\Rain.Gif
+FileInstall, C:\Goky\Logo.Gif, %A_Temp%\Goky\Logo.Gif
+FileInstall, C:\Goky\Check1.png, %A_Temp%\Goky\Check1.png
+FileInstall, C:\Goky\Chec1.png, %A_Temp%\Goky\Chec1.png
+FileInstall, C:\Goky\Chec2.png, %A_Temp%\Goky\Chec2.png
+FileInstall, C:\Goky\Exit.png, %A_Temp%\Goky\Exit.png
+FileInstall, C:\Goky\Hide.png, %A_Temp%\Goky\Hide.png
+FileInstall, C:\Goky\Settings.png, %A_Temp%\Goky\Settings.png
+FileInstall, C:\Goky\Settings2.png, %A_Temp%\Goky\Settings2.png
+FileInstall, C:\Goky\Sprint.png, %A_Temp%\Goky\Sprint.png
+FileInstall, C:\Goky\Sprint2.png, %A_Temp%\Goky\Sprint2.png
+FileInstall, C:\Goky\Clicker.png, %A_Temp%\Goky\Clicker.png
+FileInstall, C:\Goky\Clicker2.png, %A_Temp%\Goky\Clicker2.png
+FileInstall, C:\Goky\Clear.png, %A_Temp%\Goky\Clear.png
+FileInstall, C:\Goky\Settings.ini, %A_Temp%\Goky\Settings.ini
+Menu, Tray, Click, 1
+Menu, Tray, NoStandard
+Menu, Tray, Add, Show, ShowGui
+Menu, Tray, Add, Quit, ExitApp
+Gui, Top: Color, 0f0f0f, 0f0f0f
+Gui, Top: Font, Bold c31313e,
+Gui, Top: -Caption +HWNDhGui3 +Owner
+Gui, Top: Add, Picture, x456 y0 gExit, %A_Temp%\Goky\Exit.png
+Gui, Top: Add, Picture, x433 y0 gHide, %A_Temp%\Goky\Hide.png
+Gui, Top: Add, Picture, x22 w38 y50 h38 vGui88 gGui4, %A_Temp%\Goky\Home.png
+Gui, Top: Add, Picture, x22 w38 y50 h38 vGui99 gGui4, %A_Temp%\Goky\Home2.png
+Gui, Top: Add, Picture, x20 w42 y108 h37 vGui66 gGui1, %A_Temp%\Goky\Clicker.png
+Gui, Top: Add, Picture, x20 w42 y108 h37 vGui77 gGui1 Hidden, %A_Temp%\Goky\Clicker2.png
+Gui, Top: Add, Picture, x20 w39 y165 h39 vGui22 gGui2, %A_Temp%\Goky\Sprint.png
+Gui, Top: Add, Picture, x20 w39 y165 h39 vGui33 gGui2 Hidden, %A_Temp%\Goky\Sprint2.png
+Gui, Top: Add, Picture, x19 w41 y222 h41 vGui44 gGui3, %A_Temp%\Goky\Settings.png
+Gui, Top: Add, Picture, x19 w41 y222 h41 vGui55 gGui3 Hidden, %A_Temp%\Goky\Settings2.png
+Gui, Top: Show, w479 h314,
+Gui, Caption: Color, 151515, 151515
+Gui, Caption: Font, s11 c8e8e8e,
+Gui, Caption: Add, Text, x0 w433 y0 h23 gGuiMove +BackgroundTrans,
+Gui, Caption: -caption +Parent%hGui3%
+Gui, Caption: Show, x0 w433 y0 h23
+Path = %A_Temp%/Goky/Rain.gif
+width := 479, height := 3
+Gui, Rain: -DPIScale Disabled -caption +Parent%hGui3%
+Gui, Rain: Margin, 0, 0
+Gui, Rain: Add, ActiveX, w%width% h%height% Disabled voIE, Shell.Explorer
+oIE.Navigate("about:blank")
+oIE.Document.Write("<body style=""overflow: hidden; margin: 0px""><img src=" Path " width=" width "px; height=" height "></body>" ) 
+oIE.Document.close
+Gui, Rain: Show, y23,
+Path = %A_Temp%/Goky/Logo.gif
+width := 36, height := 37
+Gui, Logo: -DPIScale Disabled -caption +Parent%hGui3%
+Gui, Logo: Margin, 0, 0
+Gui, Logo: Add, ActiveX, w%width% h%height% Disabled voIE, Shell.Explorer
+oIE.Navigate("about:blank")
+oIE.Document.Write("<body style=""overflow: hidden; margin: 0px""><img src=" Path " width=" width "px; height=" height "></body>" ) 
+oIE.Document.close
+Gui, Logo: Show, x438 y273,
+Gui, Home: Color, 0f0f0f, 161616
+Gui, Home: Font, s11 c8e8e8e,
+Gui, Home: -Caption +Parent%hGui3%
+Gui, Home: Show, x65 y30 w360 h280,
+Gui, Home: Add, Picture, x20 w21 y20 h21 vIgn1 gIgnore, %A_Temp%\Goky\Check.png
+Gui, Home: Add, Picture, x20 w21 y20 h21 vIgn0 gIgnore Hidden, %A_Temp%\Goky\Check1.png
+Gui, Home: Add, Text, x50 y23 w222 h20 +BackgroundTrans, IgnoreChatBinds
+Gui, Home: Add, Text, x158 y23 w180 vTestIgnore gBindIgnore c6e6e6e, Bind [None]
+Gui, Home: Add, Edit, x423450 y234570 w50 -E0x230 vMyHotKeyStringIg gBindIg, *~$
+Gui, Home: Add, Picture, x20 w21 y50 h21 v91 gY1, %A_Temp%\Goky\Check.png
+Gui, Home: Add, Picture, x20 w21 y50 h21 v81 gY1 Hidden, %A_Temp%\Goky\Check1.png
+Gui, Home: Add, Text, x50 y53 w222 h20 +BackgroundTrans, AlwaysOnTop
+Gui, Home: Add, Picture, x20 w21 y80 h21 vHide1 gHides, %A_Temp%\Goky\Check.png
+Gui, Home: Add, Picture, x20 w21 y80 h21 vHide0 gHides Hidden, %A_Temp%\Goky\Check1.png
+Gui, Home: Add, Text, x50 y83 w222 h20 +BackgroundTrans, Hide
+Gui, Home: Add, Text, x88 y83 w180 h20 vTest10 gBind10 c6e6e6e, Bind [None]
+Gui, Home: Add, Edit, x423450 y234570 w50 h20 -E0x230 vMyHotKeyString8 gBind8, *~$
+Gui, Home: Add, Text, x20 y138 w80, Window Title
+Gui, Home: Add, Picture, x20 y158 w102 h20, %A_Temp%\Goky\Bor2.png
+Gui, Home: Add, Edit, x22 y160 w100 h17 -E0x230 gTitle vTitle c6e6e6e, Title
+Gui, Home: Add, Picture, x122 y158 gClear, %A_Temp%\Goky\Clear.png
+IniRead, Edit1, %A_Temp%\Goky\settings.ini, KeySetup, Edit1
+IniRead, Edit2, %A_Temp%\Goky\settings.ini, KeySetup, Edit2
+IniRead, Edit3, %A_Temp%\Goky\settings.ini, KeySetup, Edit3
+IniRead, Edit4, %A_Temp%\Goky\settings.ini, KeySetup, Edit4
+Gui, 2: Color, 0f0f0f, 0f0f0f
+Gui, 2: Font, s11 c8e8e8e,
+Gui, 2: -Caption +Parent%hGui3%
+Gui, 2: Add, Picture, x20 w21 y20 h21 v1 gC, %A_Temp%\Goky\Check.png
+Gui, 2: Add, Picture, x20 w21 y20 h21 v0 gC Hidden, %A_Temp%\Goky\Check1.png
+Gui, 2: Add, Text, x50 y23 w57 h20 +BackgroundTrans gGui7, Left Click
+Gui, 2: Add, Text, x110 y23 w160 h20 vTest1 gBind c6e6e6e, Bind [None]
+Gui, 2: Add, Edit, x423450 y234570 w50 h20 -E0x230 vMyHotKeyString1 gBind1, *~$
+Gui, 2: Add, Text, x20 y51 +BackgroundTrans, Left Delay
+Gui, 2: Add, Picture, x20 y70 w108 h10 ghSlider7, %A_Temp%\Goky\Borders.png
+Gui, 2: Add, Progress, x22 y72 w104 h6 Background0x0f0f0f c191919 Range0-300 hwndSliderBackground7,0
+Gui, 2: Add, Progress, hwndSliderHandle7 x20 y72 w0 h0 Background0x31313e c050505, 0
+Gui, 2: Add, Text, x81 y52 w25 c0x8e8e8e Center HwndDisplayText7, 0
+Gui, 2: Add, Picture, x20 w21 y90 h21 v3 gA, %A_Temp%\Goky\Check.png
+Gui, 2: Add, Picture, x20 w21 y90 h21 v2 gA Hidden, %A_Temp%\Goky\Check1.png
+Gui, 2: Add, Text, x50 y93 w73 h20 +BackgroundTrans gRight, Right Click
+Gui, GuiRight: Hide
+Gui, GUIRight: Color, 0f0f0f, 0f0f0f
+Gui, GUIRight: Font, s11 c8e8e8e,
+Gui, GUIRight: -Caption +Parent%hGui3%
+Gui, GUIRight: Add, Picture, x20 y20 vRight0 gRight2, %A_Temp%\Goky\Check.png
+Gui, GUIRight: Add, Picture, x20 y20 vRight1 gRight2 Hidden, %A_Temp%\Goky\Check1.png
+Gui, GUIRight: Add, Text, x50 y23 h20 +BackgroundTrans, Automatic block change
+Gui, 2: Add, Text, x20 y121 w100 +BackgroundTrans, Right Delay
+Gui, 2: Add, Picture, x20 y141 w108 h10 ghSlider6, %A_Temp%\Goky\Borders.png
+Gui, 2: Add, Progress, x22 y143 w104 h6 Background0x0f0f0f c191919 Range0-300 hwndSliderBackground6,0
+Gui, 2: Add, Progress, hwndSliderHandle6 x22 y142 w0 h0 Background0x0f0f0f c191919, 0
+Gui, 2: Add, Text, x91 y122 w25 c0x8e8e8e Center HwndDisplayText6, 0
+Gui, 2: Add, Text, x120 y93 w160 h20 vTest6 gBind6 c6e6e6e, Bind [None]
+Gui, 2: Add, Edit, x423450 y234570 w50 h20 -E0x230 vMyHotKeyString2 gBind2, *~$
+Gui, 2: Add, Picture, x20 w21 y220 h21 v5 gS, %A_Temp%\Goky\Check.png
+Gui, 2: Add, Picture, x20 w21 y220 h21 v4 gS Hidden, %A_Temp%\Goky\Check1.png
+Gui, 2: Add, Text, x50 y223 w70 h20 +BackgroundTrans gGUIS, Block-Hit
+Gui, GuiS: Hide
+Gui, GUIS: Color, 0f0f0f, 0f0f0f
+Gui, GUIS: Font, s11 c8e8e8e,
+Gui, GUIS: -Caption +Parent%hGui3%
+Gui, GuiS: Add, Picture, x20 w21 y20 h21 vBlo3 gBlo11, %A_Temp%\Goky\Check.png
+Gui, GuiS: Add, Picture, x20 w21 y20 h21 vBlo4 gBlo11 Hidden, %A_Temp%\Goky\Check1.png
+Gui, GuiS: Add, Text, x50 y23 w190 h20 +BackgroundTrans, Interaction Module
+Gui, GuiS: Add, Text, x20 y51 w100 h17 +BackgroundTrans, Hit Change
+Gui, GuiS: Add, Picture, x20 y71 w108 h10 ghSlideri, %A_Temp%\Goky\Borders.png
+Gui, GuiS: Add, Progress, x22 y73 w104 h6 Background0x0f0f0f c191919 Range0-900 hwndSliderBackgroundi,0
+Gui, GuiS: Add, Progress, hwndSliderHandlei x22 y72 w0 h0 Background0x31313e c050505, 0
+Gui, GuiS: Add, Text, x88 y52 w25 h13 c0x8e8e8e Center HwndDisplayTexti, 0
+Gui, 2: Add, Picture, x20 w21 y160 h21 v7 gR, %A_Temp%\Goky\Check.png
+Gui, 2: Add, Picture, x20 w21 y160 h21 v6 gR Hidden, %A_Temp%\Goky\Check1.png
+Gui, 2: Add, Text, x50 y163 w82 h20 +BackgroundTrans gGuiRan, Randomize
+Gui, Ran: Hide
+Gui, Ran: Color, 0f0f0f, 0f0f0f
+Gui, Ran: Font, s11 c8e8e8e,
+Gui, Ran: -Caption +Parent%hGui3%
+Gui, Ran: Add, Text, x20 y31 +BackgroundTrans, Random Min
+Gui, Ran: Add, Picture, x20 y51 w108 h10 ghSlider8, %A_Temp%\Goky\Borders.png
+Gui, Ran: Add, Progress, x22 y53 w104 h6 Background0x0f0f0f c191919 Range0-200 hwndSliderBackground8,0
+Gui, Ran: Add, Progress, hwndSliderHandle8 x22 y52 w0 h0 Background0x31313e c050505, 0
+Gui, Ran: Add, Text, x100 y32 w25 c0x8e8e8e Center HwndDisplayText8, 0
+Gui, Ran: Add, Text, x20 y71 w100 h17 +BackgroundTrans, Random Max
+Gui, Ran: Add, Picture, x20 y91 w108 h10 ghSlider9, %A_Temp%\Goky\Borders.png
+Gui, Ran: Add, Progress, x22 y93 w104 h6 Background0x0f0f0f c191919 Range0-200 hwndSliderBackground9,0
+Gui, Ran: Add, Progress, hwndSliderHandle9 x22 y82 w0 h0 Background0x31313e c050505, 0
+Gui, Ran: Add, Text, x104 y72 w20 h13 c0x8e8e8e Center HwndDisplayText9, 0
+Gui, 2: Add, Picture, x20 w21 y190 h21 vB6 gBreak, %A_Temp%\Goky\Check.png
+Gui, 2: Add, Picture, x20 w21 y190 h21 vB7 gBreak Hidden, %A_Temp%\Goky\Check1.png
+Gui, 2: Add, Text, x50 y193 w252 h20 +BackgroundTrans gDoub, Double-Hit
+Gui, Doub: Hide
+Gui, Doub: Color, 0f0f0f, 0f0f0f
+Gui, Doub: Font, s11 c8e8e8e, 
+Gui, Doub: -Caption +Parent%hGui3%
+Gui, Doub: Add, Text, x20 y21 w100 h17 +BackgroundTrans, Hit Change
+Gui, Doub: Add, Picture, x20 y41 w108 h10 ghSliderK, %A_Temp%\Goky\Borders.png
+Gui, Doub: Add, Progress, x22 y43 w104 h6 Background0x0f0f0f c191919 Range0-900 hwndSliderBackgroundK,0
+Gui, Doub: Add, Progress, hwndSliderHandleK x22 y42 w0 h0 Background0x31313e c050505, 0
+Gui, Doub: Add, Text, x88 y22 w25 h13 c0x8e8e8e Center HwndDisplayTextK, 0
+Gui, 7: Hide
+Gui, 7: Color, 0f0f0f, 0f0f0f
+Gui, 7: Font, s11 c8e8e8e, 
+Gui, 7: -Caption +Parent%hGui3%
+Gui, 7: Add, Picture, x20 w21 y20 h21 vJitter2 gJitter, %A_Temp%\Goky\Check.png
+Gui, 7: Add, Picture, x20 w21 y20 h21 vJitter1 gJitter Hidden, %A_Temp%\Goky\Check1.png
+Gui, 7: Add, Text, x50 y23 w80 h20 +BackgroundTrans, Jitter Click
+Gui, 7: Add, Text, x20 y51 +BackgroundTrans, Jitter Range
+Gui, 7: Add, Picture, x20 w21 y90 h21 vRig2 gRig, %A_Temp%\Goky\Check.png
+Gui, 7: Add, Picture, x20 w21 y90 h21 vRig1 gRig Hidden, %A_Temp%\Goky\Check1.png
+Gui, 7: Add, Text, x50 y93 w222 h20 +BackgroundTrans, BreakBlock' Smart
+Gui, 7: Add, Picture, x20 y70 w108 h10 ghSlider19, %A_Temp%\Goky\Borders.png
+Gui, 7: Add, Progress, x22 y72 w104 h6 Background0x0f0f0f c191919 Range0-100 hwndSliderBackground19,0
+Gui, 7: Add, Progress, hwndSliderHandle19 x22 y72 w0 h0 Background0x31313e c050505, 0
+Gui, 7: Add, Text, x93 y52 w25 h13 c0x8e8e8e Center HwndDisplayText19, 0
+Gui, 7: Add, Picture, x20 w21 y120 h21 vBlaa1 gBlackL, %A_Temp%\Goky\Check.png
+Gui, 7: Add, Picture, x20 w21 y120 h21 vBlaa gBlackL Hidden, %A_Temp%\Goky\Check1.png
+Gui, 7: Add, Text, x50 y123 w193 h20 +BackgroundTrans, blacklist Slot
+Gui, 7: Add, Text, x20 y165 w190 h20 +BackgroundTrans, blacklist Slot
+Gui, 7: Add, Picture, x20 w21 y190 h21 vBlack1 gBlack, %A_Temp%\Goky\Chec1.png
+Gui, 7: Add, Picture, x20 w21 y190 h21 vBlack2 gBlack Hidden, %A_Temp%\Goky\Chec2.png
+Gui, 7: Add, Picture, x50 w21 y190 h21 vBlack3 gBlack1, %A_Temp%\Goky\Chec1.png
+Gui, 7: Add, Picture, x50 w21 y190 h21 vBlack4 gBlack1 Hidden, %A_Temp%\Goky\Chec2.png
+Gui, 7: Add, Picture, x80 w21 y190 h21 vblack5 gBlack2, %A_Temp%\Goky\Chec1.png
+Gui, 7: Add, Picture, x80 w21 y190 h21 vblack6 gBlack2 Hidden, %A_Temp%\Goky\Chec2.png
+Gui, 7: Add, Picture, x110 w21 y190 h21 vblack7 gBlack3, %A_Temp%\Goky\Chec1.png
+Gui, 7: Add, Picture, x110 w21 y190 h21 vblack8 gBlack3 Hidden, %A_Temp%\Goky\Chec2.png
+Gui, 7: Add, Picture, x140 w21 y190 h21 vblack9 gBlack4, %A_Temp%\Goky\Chec1.png
+Gui, 7: Add, Picture, x140 w21 y190 h21 vblack10 gBlack4 Hidden, %A_Temp%\Goky\Chec2.png
+Gui, 7: Add, Picture, x170 w21 y190 h21 vBlack11 gBlack5, %A_Temp%\Goky\Chec1.png
+Gui, 7: Add, Picture, x170 w21 y190 h21 vBlack12 gBlack5 Hidden, %A_Temp%\Goky\Chec2.png
+Gui, 7: Add, Picture, x200 w21 y190 h21 vblack13 gBlack6, %A_Temp%\Goky\Chec1.png
+Gui, 7: Add, Picture, x200 w21 y190 h21 vblack14 gBlack6 Hidden, %A_Temp%\Goky\Chec2.png
+Gui, 7: Add, Picture, x230 w21 y190 h21 vblack15 gblack7, %A_Temp%\Goky\Chec1.png
+Gui, 7: Add, Picture, x230 w21 y190 h21 vblack16 gblack7 Hidden, %A_Temp%\Goky\Chec2.png
+Gui, 7: Add, Picture, x260 w21 y190 h21 vblack17 gblack8, %A_Temp%\Goky\Chec1.png
+Gui, 7: Add, Picture, x260 w21 y190 h21 vblack18 gblack8 Hidden, %A_Temp%\Goky\Chec2.png
+Gui, 3: Hide
+Gui, 3: Color, 0f0f0f, 0f0f0f
+Gui, 3: Font, s11 c8e8e8e, 
+Gui, 3: -Caption +Parent%hGui3%
+Gui, 3: Add, Picture, x20 w21 y20 h21 v9 gY, %A_Temp%\Goky\Check.png
+Gui, 3: Add, Picture, x20 w21 y20 h21 v8 gY Hidden, %A_Temp%\Goky\Check1.png
+Gui, 3: Add, Text, x50 y23 w222 h20 +BackgroundTrans, Sprint
+Gui, 3: Add, Picture, x20 w21 y50 h21 v90 gYY, %A_Temp%\Goky\Check.png
+Gui, 3: Add, Picture, x20 w21 y50 h21 v80 gYY Hidden, %A_Temp%\Goky\Check1.png
+Gui, 3: Add, Text, x50 y53 w222 h20 +BackgroundTrans, Toggle Sprint
+Gui, 3: Add, Text, x143 y53 w160 h20 vTest9 gBind9 c6e6e6e, Bind [None]
+Gui, 3: Add, Edit, x423450 y234570 w50 h20 -E0x230 vMyHotKeyString7 gBind7, *~$
+Gui, 4: Hide
+Gui, 4: Color, 0f0f0f, 161616
+Gui, 4: Font, s11 c8e8e8e, 
+Gui, 4: -Caption +Parent%hGui3%
+Gui, 4: Add, Picture, x20 w21 y20 h21 vFas0 gFastbr, %A_Temp%\Goky\Check.png
+Gui, 4: Add, Picture, x20 w21 y20 h21 vFas1 gFastbr Hidden, %A_Temp%\Goky\Check1.png
+Gui, 4: Add, Text, x50 y23 w75 h20 +BackgroundTrans gGuiFast, FastBridge
+Gui, 4: Add, Text, x125 y23 w160 h20 vTest11 gBindFast c6e6e6e, Bind [None]
+Gui, 4: Add, Edit, x423450 y234570 w50 h20 -E0x230 vMyHotKeyString11 gBind11, *~$
+Gui, Fast: Hide
+Gui, Fast: Color, 0f0f0f, 0f0f0f
+Gui, Fast: Font, s11 c8e8e8e,
+Gui, Fast: -Caption +Parent%hGui3%
+Gui, Fast: Add, Text, x20 y31 +BackgroundTrans, Speed
+Gui, Fast: Add, Picture, x20 y51 w108 h10 ghSliderF, %A_Temp%\Goky\Borders.png
+Gui, Fast: Add, Progress, x22 y53 w104 h6 Background0x0f0f0f c191919 Range0-200 hwndSliderBackgroundF,100
+Gui, Fast: Add, Progress, hwndSliderHandleF x22 y52 w0 h0 Background0x31313e c050505, 100
+Gui, Fast: Add, Text, x66 y32 w20 c0x8e8e8e Center HwndDisplayTextF, 100
+Gui, Fast: Add, Picture, x20 w21 y80 h21 vSAz gSDz, %A_Temp%\Goky\Check.png
+Gui, Fast: Add, Picture, x20 w21 y80 h21 vSDz gSDz, %A_Temp%\Goky\Check1.png
+Gui, Fast: Add, Text, x50 y83 w90 h20 +BackgroundTrans, Build Left
+Gui, Fast: Add, Picture, x20 w21 y110 h21 vSA2z gSD2z, %A_Temp%\Goky\Check.png
+Gui, Fast: Add, Picture, x20 w21 y110 h21 vSD2z gSD2z Hidden, %A_Temp%\Goky\Check1.png
+Gui, Fast: Add, Text, x50 y113 w90 h20 +BackgroundTrans, Build Right
+Gui, Fast: Add, Picture, x20 w21 y140 h21 vChange2 gChangee1, %A_Temp%\Goky\Check.png
+Gui, Fast: Add, Picture, x20 w21 y140 h21 vChange3 gChangee1 Hidden, %A_Temp%\Goky\Check1.png
+Gui, Fast: Add, Text, x50 y143 w150 h20 +BackgroundTrans, Block Change
+Gui, 4: Add, Picture, x20 w21 y50 h21 vMoon1 gMoonw, %A_Temp%\Goky\Check.png
+Gui, 4: Add, Picture, x20 w21 y50 h21 vMoon0 gMoonw Hidden, %A_Temp%\Goky\Check1.png
+Gui, 4: Add, Text, x50 y53 w75 h20 +BackgroundTrans gGuiMoon, Moonwalk
+Gui, 4: Add, Text, x121 y53 w160 h20 vTestMoon gBindMoon c6e6e6e, Bind [None]
+Gui, 4: Add, Edit, x423450 y234570 w50 h20 -E0x230 vMyHotKeyString12 gBind12, *~$
+Gui, 4: Add, Picture, x20 w21 y80 h21 vSky1 gSky, %A_Temp%\Goky\Check.png
+Gui, 4: Add, Picture, x20 w21 y80 h21 vSky0 gSky Hidden, %A_Temp%\Goky\Check1.png
+Gui, 4: Add, Text, x50 y83 w75 h20 +BackgroundTrans gSkyGui, SkyBridge
+Gui, 4: Add, Text, x121 y83 w160 h20 vTestSky gBindSkyy c6e6e6e, Bind [None]
+Gui, 4: Add, Edit, x423450 y234570 w50 h20 -E0x230 vMyHotKeyStringSky gBindSky, *~$
+Gui, Comm11: Hide
+Gui, Comm11: Color, 0f0f0f, 161616
+Gui, Comm11: Font, s11 c8e8e8e,
+Gui, Comm11: -Caption +Parent%hGui3%
+Gui, Comm11: Add, Text, x20 y31 +BackgroundTrans, Change
+Gui, Comm11: Add, Picture, x20 y51 w108 h10 ghSliderK1, %A_Temp%\Goky\Borders.png
+Gui, Comm11: Add, Progress, x22 y53 w104 h6 Background0x0f0f0f c191919 Range0-200 hwndSliderBackgroundK1,56
+Gui, Comm11: Add, Progress, hwndSliderHandleK1 x22 y52 w0 h0 Background0x31313e c050505, 100
+Gui, Comm11: Add, Text, x69 y32 w20 c0x8e8e8e Center HwndDisplayTextK1, 56
+Gui, Comm11: Add, Picture, x20 y71 w102 h20, %A_Temp%\Goky\Bor2.png
+Gui, Comm11: Add, Edit, Limit1 x22 y73 w15 h17 -E0x230 gKey1 vKeys c6e6e6e,
+Gui, Comm11: Add, Edit, x37 y73 w84 h17 -E0x230 gCom2 vCom2 c6e6e6e, 
+Gui, Comm11: Add, Picture, x122 y71 w17 h20 gClears, %A_Temp%\Goky\Clear.png
+Gui, 4: Add, Picture, x20 w21 y140 h21 vCommand1 gcomm, %A_Temp%\Goky\Check.png
+Gui, 4: Add, Picture, x20 w21 y140 h21 vCommand0 gcomm Hidden, %A_Temp%\Goky\Check1.png
+Gui, 4: Add, Text, x50 y143 h20 +BackgroundTrans gComm11, AutoCMD
+Gui, 4: Add, Text, x116 y143 w160 h20 vTestCommand gBindCommand c6e6e6e, Bind [None]
+Gui, 4: Add, Edit, x423450 y234570 w50 h20 -E0x230 vMyHotKeyString18 gBind18, *~$
+Gui, 4: Add, Picture, x20 w21 y110 h21 vAir1 gAir, %A_Temp%\Goky\Check.png
+Gui, 4: Add, Picture, x20 w21 y110 h21 vAir0 gAir Hidden, %A_Temp%\Goky\Check1.png
+Gui, 4: Add, Text, x50 y113 w120 h20 +BackgroundTrans, AirStuck
+Gui, 4: Add, Text, x108 y113 w160 h20 vTestStuck gBindStuck c6e6e6e, Bind [None]
+Gui, 4: Add, Edit, x423450 y234570 w50 h20 -E0x230 vMyHotKeyStringAir gBindAir, *~$
+Gui, 4: Add, Picture, x20 w21 y170 h21 vSpamm1 gSpamms, %A_Temp%\Goky\Check.png
+Gui, 4: Add, Picture, x20 w21 y170 h21 vSpamm0 gSpamms Hidden, %A_Temp%\Goky\Check1.png
+Gui, 4: Add, Text, x50 y173 h20 +BackgroundTrans gGuiSpamm, Spammer
+Gui, 4: Add, Text, x118 y173 w160 h20 vTestSpammer1 gBindSpammer1 c6e6e6e, Bind [None]
+Gui, 4: Add, Edit, x423450 y234570 w50 h20 -E0x230 vMyHotKeyStringSpammer gBindSpammer, *~$
+BlockInput, MouseMoveOff
+Gui, Spam: Hide
+Gui, Spam: Color, 0f0f0f, 161616
+Gui, Spam: Font, s11 c8e8e8e,
+Gui, Spam: -Caption +Parent%hGui3%
+Gui, Spam: Add, Text, x20 y31 +BackgroundTrans, Change
+Gui, Spam: Add, Picture, x20 y51 w108 h10 ghSliderK5, %A_Temp%\Goky\Borders.png
+Gui, Spam: Add, Progress, x22 y53 w104 h6 Background0x0f0f0f c191919 Range0-200 hwndSliderBackgroundK5,56
+Gui, Spam: Add, Progress, hwndSliderHandleK5 x22 y52 w0 h0 Background0x31313e c050505, 100
+Gui, Spam: Add, Text, x69 y32 w20 c0x8e8e8e Center HwndDisplayTextK5, 56
+Gui, Spam: Add, Picture, x20 y80 w144 h93, %A_Temp%\Goky\Borders3.png
+Gui, Spam: Add, Edit, x26 y86 w133 h82 -E0x230 -vscroll vMsg gsave, Messages
+Gui, Spam: Add, Picture, x20 y184 w144 h20, %A_Temp%\Goky\Borders4.png
+Gui, Spam: Add, Edit, x22 y186 w135 h17 -E0x230 -vscroll gKeys2 vKey2, 
+Gui, Spam: Add, Picture, x20 w21 y220 h21 vGlobal1 gGlobal, %A_Temp%\Goky\Check.png
+Gui, Spam: Add, Picture, x20 w21 y220 h21 vGlobal0 gGlobal Hidden, %A_Temp%\Goky\Check1.png
+Gui, Spam: Add, Text, x50 y223 h20 +BackgroundTrans gGuiSpamm, Global Chat
+Gui, Sky: Hide
+Gui, Sky: Color, 0f0f0f, 0f0f0f
+Gui, Sky: Font, s11 c8e8e8e,
+Gui, Sky: -Caption +Parent%hGui3%
+Gui, Sky: Add, Picture, x20 w21 y20 h21 vSASky gSDSky, %A_Temp%\Goky\Check.png
+Gui, Sky: Add, Picture, x20 w21 y20 h21 vSDSky gSDSky, %A_Temp%\Goky\Check1.png
+Gui, Sky: Add, Text, x50 y23 w90 h20 +BackgroundTrans, Build Left
+Gui, Sky: Add, Picture, x20 w21 y50 h21 vSA2Sky gSD2Sky, %A_Temp%\Goky\Check.png
+Gui, Sky: Add, Picture, x20 w21 y50 h21 vSD2Sky gSD2Sky Hidden, %A_Temp%\Goky\Check1.png
+Gui, Sky: Add, Text, x50 y53 w90 h20 +BackgroundTrans, Build Right
+Gui, Sky: Add, Picture, x20 w21 y80 h21 vChange5 gChangee2, %A_Temp%\Goky\Check.png
+Gui, Sky: Add, Picture, x20 w21 y80 h21 vChange4 gChangee2 Hidden, %A_Temp%\Goky\Check1.png
+Gui, Sky: Add, Text, x50 y83 w150 h20 +BackgroundTrans, Block Change
+Gui, Moon: Hide
+Gui, Moon: Color, 0f0f0f, 0f0f0f
+Gui, Moon: Font, s11 c8e8e8e,
+Gui, Moon: -Caption +Parent%hGui3%
+Gui, Moon: Add, Text, x20 y31 +BackgroundTrans, Bypass 
+Gui, Moon: Add, Picture, x20 y51 w108 h10 ghSliderMZ, %A_Temp%\Goky\Borders.png
+Gui, Moon: Add, Progress, x22 y53 w104 h6 Background0x0f0f0f c191919 Range0-100 hwndSliderBackgroundMZ,0
+Gui, Moon: Add, Progress, hwndSliderHandleMZ x22 y52 w0 h0 Background0x31313e c050505, 100
+Gui, Moon: Add, Text, x70 y32 w20 c0x8e8e8e Center HwndDisplayTextMZ, 0
+
+Gui, Moon: Add, Text, x20 y71 +BackgroundTrans, Strafe
+Gui, Moon: Add, Picture, x20 y91 w108 h10 ghSliderSpeed, %A_Temp%\Goky\Borders.png
+Gui, Moon: Add, Progress, x22 y93 w104 h6 Background0x0f0f0f c191919 Range0-200 hwndSliderBackgroundSpeed,200
+Gui, Moon: Add, Progress, hwndSliderHandleSpeed x22 y92 w0 h0 Background0x31313e c050505, 200
+Gui, Moon: Add, Text, x60 y72 w20 c0x8e8e8e Center HwndDisplayTextSpeed, 200
+
+Gui, Moon: Add, Picture, x20 w21 y140 h21 vSA gSD, %A_Temp%\Goky\Check.png
+Gui, Moon: Add, Picture, x20 w21 y140 h21 vSD gSD, %A_Temp%\Goky\Check1.png
+Gui, Moon: Add, Text, x50 y143 w90 h20 +BackgroundTrans, Build Left
+Gui, Moon: Add, Picture, x20 w21 y170 h21 vSA2 gSD2, %A_Temp%\Goky\Check.png
+Gui, Moon: Add, Picture, x20 w21 y170 h21 vSD2 gSD2 Hidden, %A_Temp%\Goky\Check1.png
+Gui, Moon: Add, Text, x50 y173 w90 h20 +BackgroundTrans, Build Right
+Gui, Moon: Add, Picture, x20 w21 y200 h21 vChange1 gChangee, %A_Temp%\Goky\Check.png
+Gui, Moon: Add, Picture, x20 w21 y200 h21 vChange0 gChangee Hidden, %A_Temp%\Goky\Check1.png
+Gui, Moon: Add, Text, x50 y203 w150 h20 +BackgroundTrans, Block Change
+
+Gui, Moon: Add, Picture, x20 w21 y110 h21 vStrafes1 gStrafes, %A_Temp%\Goky\Check.png
+Gui, Moon: Add, Picture, x20 w21 y110 h21 vStrafes0 gStrafes Hidden, %A_Temp%\Goky\Check1.png
+Gui, Moon: Add, Text, x50 y113 +BackgroundTrans, Strafe
+
+Gui, Moon: Add, Picture, x20 w21 y230 h21 vRandom11 gRandom1, %A_Temp%\Goky\Check.png
+Gui, Moon: Add, Picture, x20 w21 y230 h21 vRandom10 gRandom1 Hidden, %A_Temp%\Goky\Check1.png
+Gui, Moon: Add, Text, x50 y233 +BackgroundTrans, Random Strafe
+GuiControl, Home:, Title, %EDIT1%
+GuiControl, Comm11:, Com2, %Edit2%
+GuiControl, Comm11:, Keys, %Edit3%
+GuiControl, Spam:, Key2, %Edit4%
+return
+
+Right2:
+++countRight11
+if countRight11 = 1
+{
+GuiControl, Show, Right1
+GuiControl, Hide, Right0
+BlockChange := !BlockChange
+}
+else if countRight11 = 2
+{
+GuiControl, Show, Right0
+GuiControl, Hide, Right1
+BlockChange := !BlockChange
+countRight11 := 0
+}
+return
+
+
+
+Random1:
+++countRandom1
+if countRandom1 = 1
+{
+GuiControl, Show, Random10
+GuiControl, Hide, Random11
+ABOBA = 30
+}
+else if countRandom1 = 2
+{
+GuiControl, Show, Random11
+GuiControl, Hide, Random10
+ABOBA = 0
+countRandom1 := 0
+}
+return
+
+Strafes:
+++countStrafesS
+if countStrafesS = 1
+{
+GuiControl, Show, Strafes0
+GuiControl, Hide, Strafes1
+Strafe1 := !Strafe1
+Strafe := !Strafe
+}
+else if countStrafesS = 2
+{
+GuiControl, Show, Strafes1
+GuiControl, Hide, Strafes0
+Strafe1 := !Strafe1
+Strafe := !Strafe
+countStrafesS := 0
+}
+return
+
+
+Rig:
+++countRigS
+if countRigS = 1
+{
+GuiControl, Show, Rig1
+GuiControl, Hide, Rig2
+DisableS := !DisableS
+}
+else if countRigS = 2
+{
+GuiControl, Show, Rig2
+GuiControl, Hide, Rig1
+DisableS := !DisableS
+countRigS := 0
+}
+return
+Global:
+++countGlobal1
+if countGlobal1 = 1
+{
+GuiControl, Show, Global0
+GuiControl, Hide, Global1
+Global = !
+}
+else if countGlobal1 = 2
+{
+GuiControl, Show, Global1
+GuiControl, Hide, Global0
+Global = 
+countGlobal1 := 0
+}
+return
+keys2:
+Gui, Submit, NoHide
+IniWrite, %Key2%, %A_Temp%\Goky\settings.ini, KeySetup, EDIT4
+return
+save:
+Gui, Submit, NoHide
+FileName = %A_Temp%\Goky\Messages.txt
+File := FileOpen(FileName, "w")
+File.Length := 0, File.Close()
+FileAppend, %Msg%, %A_Temp%\Goky\Messages.txt
+x:=1
+return
+zxc:
+BindSpammer:
+Hotkey, %MyHotKeyStringSpammer%, keyStringSpammer, off, useerrorlevel
+Gui, Submit, NoHide
+Hotkey, %MyHotKeyStringSpammer%, keyStringSpammer, on, useerrorlevel
+Return
+KeyStringSpammer:
+if Spammmm
+FileRead, out, %A_Temp%\Goky\Messages.txt
+IfWinActive, %Title%
+if Spammmm
+loop, parse, out, `n, `r
+{
+	global Total:=a_index
+	If A_LoopField
+		Num++
+}
+if Spammmm
+if (Total < x) {
+	x:=1
+	FileReadLine, text, %A_Temp%\Goky\Messages.txt, %x%
+	x++
+        IfWinActive, %Title%
+        if Spammmm
+        SendMessage, 0x50,, 0x4090409,, A
+        SendInput, %Key2%
+        Sleep %ButtonValueK5%
+        SendInput, {%Global%}%text%{enter}
+        Sleep 65
+} else {
+FileReadLine, text, %A_Temp%\Goky\Messages.txt, %x%
+x++
+        IfWinActive, %Title%
+        if Spammmm
+        SendMessage, 0x50,, 0x4090409,, A
+        SendInput, %Key2%
+        Sleep %ButtonValueK5%
+        SendInput, {%Global%}%text%{enter}
+        Sleep 65
+}
+return
+
+Spamms:
+++countSpamm1
+if countSpamm1 = 1
+{
+GuiControl, Show, Spamm0
+GuiControl, Hide, Spamm1
+Spammmm := !Spammmm
+}
+else if countSpamm1 = 2
+{
+GuiControl, Show, Spamm1
+GuiControl, Hide, Spamm0
+Spammmm := !Spammmm
+countSpamm1 := 0
+}
+return
+Changee1:
+++countChang1
+if countChang1 = 1
+{
+GuiControl, Show, Change3
+GuiControl, Hide, Change2
+Changes1 = MButton
+}
+else if countChang1 = 2
+{
+GuiControl, Show, Change2
+GuiControl, Hide, Change3
+Changes1 =
+countChang1 := 0
+}
+return
+Changee2:
+++countChang2
+if countChang2 = 1
+{
+GuiControl, Show, Change4
+GuiControl, Hide, Change5
+Changes2 = MButton
+}
+else if countChang2 = 2
+{
+GuiControl, Show, Change5
+GuiControl, Hide, Change4
+Changes2 =
+countChang2 := 0
+}
+return
+Changee:
+++countChang
+if countChang = 1
+{
+GuiControl, Show, Change0
+GuiControl, Hide, Change1
+Changes = MButton
+}
+else if countChang = 2
+{
+GuiControl, Show, Change1
+GuiControl, Hide, Change0
+Changes =
+countChang := 0
+}
+return
+Air:
+++countAir
+if countAir = 1
+{
+GuiControl, Show, Air0
+GuiControl, Hide, Air1
+Air := !Air
+}
+else if countAir = 2
+{
+GuiControl, Show, Air1
+GuiControl, Hide, Air0
+Air := !Air
+countAir := 0
+}
+return
+SDSky:
+GuiControl, Show, SDSky
+GuiControl, Hide, SD2Sky
+SkyS = S
+SkyD = D
+return
+SD2Sky:
+GuiControl, Show, SD2Sky
+GuiControl, Hide, SDSky
+SkyS = S
+SkyD = A
+return
+BindSky:
+Hotkey, %MyHotKeyStringSky%, keyStringSky, off, useerrorlevel
+Gui, Submit, NoHide
+Hotkey, %MyHotKeyStringSky%, keyStringSky, on, useerrorlevel
+Return
+KeyStringSky:
+If Sky
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Process, priority,, Real time
+   Critical
+   if (toggleSky := !toggleSky)
+      SetTimer, StartStopSky, -10
+   Return
+StartStopSky:
+If Sky
+IfWinActive, %Title%
+{
+Process, Priority, , R
+SetBatchLines, -1
+SetWinDelay, -1
+SetControlDelay, -1
+SendInput, {%Changes2%}{RButton}
+SendInput, {space Down}{%SkyS% Down}{%SkyD% Down}
+Sleep 187
+SendInput, {LShift down}
+Sleep 125
+SendInput, {LShift}
+SendInput, {space Up}
+SendInput, {LShift up}
+}
+   Loop  
+If Sky
+IfWinActive, %Title%
+{
+         if !toggleSky
+            break  
+SendInput, {%Changes2%}{RButton}
+SendInput, {space Down}
+Sleep 115
+SendInput, {LShift down}
+Sleep 120
+         if !toggleSky
+            break  
+SendInput, {%Changes2%}{RButton}
+SendInput, {LShift up}
+SendInput, {space Up}
+         if !toggleSky
+            break  
+ }
+SendInput, {RButton}{%SkyS% Up}{%SkyD% Up}{Space Up}{LShift Up}
+Process, priority,, Real time
+   Return
+Ignore:
+++countIg
+if countIg = 1
+{
+GuiControl, Show, Ign0
+GuiControl, Hide, Ign1
+
+Hotkey, *~$ESC, On
+Hotkey, *~$!F4, On
+Hotkey, *~$Enter, On
+Hotkey, *~$LWin, On
+
+Ignores := !Ignores
+}
+else if countIg = 2
+{
+GuiControl, Show, Ign1
+GuiControl, Hide, Ign0
+
+Hotkey, *~$ESC, Off
+Hotkey, *~$!F4, Off
+Hotkey, *~$Enter, Off
+Hotkey, *~$LWin, Off
+
+Ignores := !Ignores
+countIg := 0
+}
+return
+BindIg:
+Hotkey, %MyHotKeyStringIg%, keyStringIg, off, useerrorlevel
+Gui, Submit, NoHide
+Hotkey, %MyHotKeyStringIg%, keyStringIg, on, useerrorlevel
+Return
+KeyStringIg:
+If Ignores
+Loop, 1
+{
+IfWinActive, %Title%
+SendInput, {LCtrl Up}
+Menu,Tray,Icon, %A_Temp%\Goky\One.ico, , 1
+Suspend, ON
+Break
+}
+return
+*~$ESC::Suspend, OFF
+*~$!F4::Suspend, OFF
+*~$Enter::Suspend, OFF
+*~$LWin::Suspend, OFF
+return
+*~$!^G::Suspend, OFF
+Key1:
+Com2:
+Gui, Submit, NoHide
+IniWrite, %Com2%, %A_Temp%\Goky\settings.ini, KeySetup, EDIT2
+IniWrite, %Keys%, %A_Temp%\Goky\settings.ini, KeySetup, EDIT3
+return
+Bind18:
+Hotkey, %MyHotKeyString18%, keyString18, off, useerrorlevel
+Gui, Submit, NoHide
+Hotkey, %MyHotKeyString18%, keyString18, on, useerrorlevel
+Return
+KeyString18:
+SetBatchLines, -1
+SetWinDelay, -1
+SetKeyDelay, -1
+SetControlDelay, -1
+SendInput, {Ctrl Up}
+Loop
+IfWinActive, %Title%
+If Command
+{
+SendMessage, 0x50,, 0x4090409,, A
+SendInput, %Keys%
+Sleep %ButtonValueK1%
+SendInput, %Com2%{enter}
+Sleep 65
+Break
+}
+Return
+Bind15:
+If Moonwalk
+Hotkey, %MyHotKeyString15%, keyString15, off, useerrorlevel
+Gui, Submit, NoHide
+Hotkey, %MyHotKeyString15%, keyString15, on, useerrorlevel
+Return
+KeyString15:
+++countWhiteL
+if countWhiteL = 1
+{
+White1 := !White1
+}
+else if countWhiteL = 2
+{
+White1 := !White1
+countWhiteL := 0
+}
+return
+SD:
+GuiControl, Show, SD
+GuiControl, Hide, SD2
+S1 = S
+D1 = D
+return
+SD2:
+GuiControl, Show, SD2
+GuiControl, Hide, SD
+S1 = S
+D1 = A
+return
+SDz:
+GuiControl, Show, SDz
+GuiControl, Hide, SD2z
+S = S
+D = D
+return
+SD2z:
+GuiControl, Show, SD2z
+GuiControl, Hide, SDz
+S = S
+D = A
+return
+comm:
+++countcommand
+if countcommand = 1
+{
+GuiControl, Show, Command0
+GuiControl, Hide, Command1
+Command := !Command
+}
+else if countcommand = 2
+{
+GuiControl, Show, Command1
+GuiControl, Hide, Command0
+Command := !Command
+countcommand := 0
+}
+return
+Sky:
+++countSky
+if countSky = 1
+{
+GuiControl, Show, Sky0
+GuiControl, Hide, Sky1
+Sky := !Sky
+}
+else if countSky = 2
+{
+GuiControl, Show, Sky1
+GuiControl, Hide, Sky0
+Sky := !Sky
+countSky := 0
+}
+return
+moonw:
+++countMoon
+if countMoon = 1
+{
+GuiControl, Show, Moon0
+GuiControl, Hide, Moon1
+Moonwalk := !Moonwalk
+}
+else if countMoon = 2
+{
+GuiControl, Show, moon1
+GuiControl, Hide, Moon0
+Moonwalk := !Moonwalk
+countMoon := 0
+}
+return
+Bind12:
+If Moonwalk
+Hotkey, %MyHotKeyString12%, keyString12, off, useerrorlevel
+Gui, Submit, NoHide
+Hotkey, %MyHotKeyString12%, keyString12, on, useerrorlevel
+Return
+KeyString12:
+IfWinActive, %Title%
+If Moonwalk
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Process, priority,, Real time
+   Critical
+   if (toggleMoon := !toggleMoon)
+      SetTimer, StartStopMoon, -10
+   Return
+StartStopMoon:
+If Moonwalk
+IfWinActive, %Title%
+{
+Process, Priority, , High
+SetBatchLines, -1
+SetWinDelay, -1
+SetControlDelay, -1
+SendInput, {RButton}
+SendInput, {%D1% Down}{%S1% Down}{%Changes%}
+If Strafe1
+DllCall("mouse_event", "UInt", 0x01, "UInt", ButtonValueMZ, "UInt", 0)
+If Strafe1
+Sleep, 300
+If Strafe
+Sleep 301
+If Strafe
+SendInput, {RButton}
+If Strafe
+SetTimer, StartStrafe, 240
+}
+   Loop  
+If Moonwalk
+IfWinActive, %Title%
+{
+Process, Priority, , High
+SetBatchLines, -1
+SetWinDelay, -1
+SetControlDelay, -1
+         if !toggleMoon
+            break  
+If Strafe1
+SendInput, {RButton}{%Changes%}
+SendInput, {%D1% Up}
+If Strafe1
+Sleep, 240
+If Strafe
+Random, Rand1, %ButtonValueSpeed%, %ABOBA%
+If Strafe
+sleep %Rand1%
+         if !toggleMoon
+            break  
+If Strafe1
+DllCall("mouse_event", "UInt", 0x01, "UInt", -ButtonValueMZ, "UInt", 0)
+If Strafe1
+SendInput, {RButton}{%Changes%}
+SendInput, {%D1% Down}
+If Strafe1
+Sleep, 240
+If Strafe
+Random, Rand1, %ButtonValueSpeed%, %ABOBA%
+If Strafe
+sleep %Rand1%
+If Strafe1
+DllCall("mouse_event", "UInt", 0x01, "UInt", ButtonValueMZ, "UInt", 0)
+         if !toggleMoon
+            break  
+ }
+IfWinActive, %Title%
+If Strafe
+SetTimer, StartStrafe, Off
+SendInput, {RButton}{%S1% Up}{%D1% Up}{%Changes%}
+Process, priority,, Real time
+   Return
+StartStrafe:
+SetWinDelay, -1
+SetControlDelay, -1
+SetMouseDelay, -1
+SetBatchLines, -1
+SendInput, {RButton}{%Changes%}
+return
+
+
+Bind11:
+If FastBridge
+Hotkey, %MyHotKeyString11%, keyString11, off, useerrorlevel
+Gui, Submit, NoHide
+Hotkey, %MyHotKeyString11%, keyString11, on, useerrorlevel
+Return
+KeyString11:
+If FastBridge
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Process, priority,, Real time
+   Critical
+   if (toggle := !toggle)
+      SetTimer, StartStopFast, -10
+   Return
+
+StartStopFast:
+If FastBridge
+IfWinActive, %Title%
+{
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Process, priority,, Real time
+SendInput, {%Changes1%}{RButton}
+SendInput, {%S% Down}{%D% Down}
+Sleep 241
+SendInput, {LSHift down}
+Sleep %ButtonValueF%
+SendInput, {%Changes1%}{RButton}
+SendInput, {LShift up}
+}
+   Loop  
+If FastBridge
+IfWinActive, %Title%
+{
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Process, priority,, Real time
+Sleep 210
+SendInput, {LSHift down}
+Sleep %ButtonValueF%
+SendInput, {%Changes1%}{RButton}
+SendInput, {LSHift up}
+         if !toggle
+            break  
+ }
+SendInput, {%S% Up}{%D% Up}
+Process, priority,, Real time
+   Return
+
+Fastbr:
+++countfast
+if countfast = 1
+{
+GuiControl, Show, Fas1
+GuiControl, Hide, Fas0
+FastBridge := !FastBridge
+}
+else if countfast = 2
+{
+GuiControl, Show, Fas0
+GuiControl, Hide, Fas1
+FastBridge := !FastBridge
+countfast := 0
+}
+return
+
+
+
+Hides:
+++countHid
+if countHid = 1
+{
+GuiControl, Show, Hide0
+GuiControl, Hide, Hide1
+Hidee := !Hidee
+}
+else if countHid = 2
+{
+GuiControl, Show, Hide1
+GuiControl, Hide, Hide0
+Hidee := !Hidee
+countHid := 0
+}
+return
+
+Bind8:
+Hotkey, %MyHotKeyString8%, keyString8, off, useerrorlevel
+Gui, Submit, NoHide
+Hotkey, %MyHotKeyString8%, keyString8, on, useerrorlevel
+Return
+KeyString8:
+If Hidee
+++countHid1
+if countHid1 = 1
+{
+GuiControl, Show, Hide0
+GuiControl, Hide, Hide1
+GuiControl, Show, Test10
+Gui, Top: Hide,
+}
+else if countHid1 = 2
+{
+Gui, Top: Show,,
+countHid1 := 0
+}
+return
+YY:
+++countYY
+if countYY = 1
+{
+GuiControl, Show, 80
+GuiControl, Hide, 90
+Hotkey, *~$vk57, On
+Hotkey, *~$vk57 Up, On
+Hotkey, *~$vk1B, On
+Toggleee := !Toggleee
+}
+else if countYY = 2
+{
+GuiControl, Show, 90
+GuiControl, Hide, 80
+Hotkey, *~$vk57, Off
+Hotkey, *~$vk57 Up, Off
+Hotkey, *~$vk1B, Off
+SendInput, {Ctrl Up}
+Toggleee := !Toggleee
+countYY := 0
+}
+return
+Black:
+++countBlack
+if countBlack = 1
+{
+GuiControl, Show, Black2
+GuiControl, Hide, Black1
+01 = 0
+001 = 0
+LShift1 = Off
+}
+else if countBlack = 2
+{
+GuiControl, Show, Black1
+GuiControl, Hide, Black2
+01 = 1
+001 = 2
+LShift1 = On
+countBlack := 0
+}
+return
+Black1:
+++countBlack1
+if countBlack1 = 1
+{
+GuiControl, Show, Black4
+GuiControl, Hide, Black3
+02 = 0
+002 = 0
+LShift1 = Off
+}
+else if countBlack1 = 2
+{
+GuiControl, Show, Black3
+GuiControl, Hide, Black4
+02 = 1
+001 = 2
+LShift1 = On
+countBlack1 := 0
+}
+return
+Black2:
+++countBlack2
+if countBlack2 = 1
+{
+GuiControl, Show, Black6
+GuiControl, Hide, Black5
+03 = 0
+003 = 0
+LShift1 = Off
+}
+else if countBlack2 = 2
+{
+GuiControl, Show, Black5
+GuiControl, Hide, Black6
+03 = 1
+001 = 2
+LShift1 = On
+countBlack2 := 0
+}
+return
+Black3:
+++countBlack3
+if countBlack3 = 1
+{
+GuiControl, Show, Black8
+GuiControl, Hide, Black7
+04 = 0
+004 = 0
+LShift1 = Off
+}
+else if countBlack3 = 2
+{
+GuiControl, Show, Black7
+GuiControl, Hide, Black8
+04 = 1
+004 = 2
+LShift1 = On
+countBlack3 := 0
+}
+return
+Black4:
+++countBlack4
+if countBlack4 = 1
+{
+GuiControl, Show, Black10
+GuiControl, Hide, Black9
+05 = 0
+005 = 0
+LShift1 = Off
+}
+else if countBlack4 = 2
+{
+GuiControl, Show, Black9
+GuiControl, Hide, Black10
+05 = 1
+005 = 2
+LShift1 = On
+countBlack4 := 0
+}
+return
+Black5:
+++countBlack5
+if countBlack5 = 1
+{
+GuiControl, Show, Black12
+GuiControl, Hide, Black11
+06 = 0
+006 = 0
+LShift1 = Off
+}
+else if countBlack5 = 2
+{
+GuiControl, Show, Black11
+GuiControl, Hide, Black12
+06 = 1
+006 = 2
+LShift1 = On
+countBlack5 := 0
+}
+return
+Black6:
+++countBlack6
+if countBlack6 = 1
+{
+GuiControl, Show, Black14
+GuiControl, Hide, Black13
+07 = 0
+007 = 0
+LShift1 = Off
+}
+else if countBlack6 = 2
+{
+GuiControl, Show, Black13
+GuiControl, Hide, Black14
+07 = 1
+007 = 2
+LShift1 = On
+countBlack6 := 0
+}
+return
+Black7:
+++countBlack7
+if countBlack7 = 1
+{
+GuiControl, Show, Black16
+GuiControl, Hide, Black15
+08 = 0
+008 = 0
+LShift1 = Off
+}
+else if countBlack7 = 2
+{
+GuiControl, Show, Black15
+GuiControl, Hide, Black16
+08 = 1
+008 = 2
+LShift1 = On
+countBlack7 := 0
+}
+return
+Black8:
+++countBlack8
+if countBlack8 = 1
+{
+GuiControl, Show, Black18
+GuiControl, Hide, Black17
+09 = 0
+009 = 0
+LShift1 = Off
+}
+else if countBlack8 = 2
+{
+GuiControl, Show, Black17
+GuiControl, Hide, Black18
+09 = 1
+009 = 2
+LShift1 = On
+countBlack8 := 0
+}
+return
+Blo11:
+++countBlo11
+if countBlo11 = 1
+{
+GuiControl, Show, blo4
+GuiControl, Hide, blo3
+BlockHit := !BlockHit
+BlockHitIn := !BlockHitIn
+}
+else if countBlo11 = 2
+{
+GuiControl, Show, blo3
+GuiControl, Hide, blo4
+BlockHit := !BlockHit
+BlockHitIn := !BlockHitIn
+countBlo11 := 0
+}
+return
+Title:
+Gui, Submit, NoHide
+IniWrite, %Title%, %A_Temp%\Goky\settings.ini, KeySetup, EDIT1
+process = %Title%.exe
+return
+Gui3:
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+GuiControl, Hide, Gui44
+GuiControl, Show, Gui55
+GuiControl, Show, Gui22
+GuiControl, Hide, Gui33
+GuiControl, Show, Gui66
+GuiControl, Hide, Gui77
+GuiControl, Show, Gui88
+GuiControl, Hide, Gui99
+GUIControl, Home: Disable, Title
+GUIControl, comm11: Disable, Keys
+GUIControl, comm11: Disable, Com2
+GUIControl, Spam: Disable, Msg
+GUIControl, Spam: Disable, key2
+Gui, 4: Show, x65 y30 w360 h280,
+Gui, 2: Hide
+Gui, 7: Hide,
+Gui, 3: Hide
+Gui, Moon: Hide,
+Gui, Fast: Hide,
+Gui, GuiS: Hide,
+Gui, Ran: Hide
+Gui, Sky: Hide,
+Gui, Spam: Hide, 
+Gui, Bow: Hide,
+Gui, Doub: Hide,
+Gui, Comm11: Hide,
+Gui, GuiRight: Hide,
+return
+Gui2:
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+GuiControl, Hide, Gui22
+GuiControl, Show, Gui33
+GuiControl, Hide, Gui55
+GuiControl, Show, Gui44
+GuiControl, Show, Gui66
+GuiControl, Hide, Gui77
+GuiControl, Show, Gui88
+GuiControl, Hide, Gui99
+GUIControl, 4: Disable, Keys
+GUIControl, 4: Disable, Com2
+GUIControl, Home: Disable, Title
+GUIControl, comm11: Disable, Keys
+GUIControl, comm11: Disable, Com2
+GUIControl, Spam: Disable, Msg
+GUIControl, Spam: Disable, key2
+Gui, 3: Show, x65 y30 w360 h280,
+Gui, Bow: Hide,
+Gui, 2: Hide
+Gui, 4: Hide
+Gui, 7: Hide,
+Gui, GuiS: Hide,
+Gui, Moon: Hide,
+Gui, Fast: Hide,
+Gui, Ran: Hide
+Gui, Sky: Hide,
+Gui, Spam: Hide, 
+Gui, Doub: Hide,
+Gui, Comm11: Hide,
+Gui, GuiRight: Hide,
+return
+Gui1:
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+GuiControl, Show, Gui77
+GuiControl, Hide, Gui66
+GuiControl, Show, Gui22
+GuiControl, Hide, Gui33
+GuiControl, Show, Gui44
+GuiControl, Hide, Gui55
+GuiControl, Show, Gui88
+GuiControl, Hide, Gui99
+GUIControl, 4: Disable, Keys
+GUIControl, 4: Disable, Com2
+GUIControl, Home: Disable, Title
+GUIControl, comm11: Disable, Keys
+GUIControl, comm11: Disable, Com2
+GUIControl, Spam: Disable, Msg
+GUIControl, Spam: Disable, key2
+Gui, 2: Show, x65 y30 w360 h280,
+Gui, Bow: Hide,
+Gui, 7: Hide,
+Gui, 3: Hide
+Gui, 4: Hide
+Gui, Ran: Hide
+Gui, GuiS: Hide,
+Gui, Moon: Hide,
+Gui, Fast: Hide,
+Gui, Sky: Hide,
+Gui, Spam: Hide, 
+Gui, Doub: Hide,
+Gui, Comm11: Hide,
+Gui, GuiRight: Hide,
+return
+Gui4:
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+GuiControl, Show, Gui99
+GuiControl, Hide, Gui88
+GuiControl, Hide, Gui55
+GuiControl, Show, Gui44
+GuiControl, Show, Gui22
+GuiControl, Hide, Gui33
+GuiControl, Show, Gui66
+GuiControl, Hide, Gui77
+GUIControl, 4: Disable, Keys
+GUIControl, 4: Disable, Com2
+GUIControl, Home: Enable, Title
+GUIControl, comm11: Disable, Keys
+GUIControl, comm11: Disable, Com2
+GUIControl, Spam: Disable, Msg
+GUIControl, Spam: Disable, key2
+Gui, Home: Show, x65 y30 w360 h280,
+Gui, Bow: Hide,
+Gui, 3: Hide,
+Gui, 4: Hide,
+Gui, Ran: Hide,
+Gui, 2: Hide,
+Gui, Moon: Hide,
+Gui, Fast: Hide,
+Gui, GuiS: Hide,
+Gui, 7: Hide, 
+Gui, Ran: Hide,
+Gui, Sky: Hide,
+Gui, Doub: Hide,
+Gui, Spam: Hide, 
+Gui, Comm11: Hide,
+Gui, GuiRight: Hide,
+return
+Right:
+Gui, 4: Hide,
+Gui, GuiRight: Show, x65 y30 w360 h280,
+return
+SkyGui:
+Gui, 4: Hide,
+Gui, Sky: Show, x65 y30 w360 h280,
+return
+Gui7:
+Gui, 2: Hide,
+Gui, 7: Show, x65 y30 w360 h280,
+return
+GuiRan:
+Gui, 2: Hide,
+Gui, Ran: Show, x65 y30 w360 h280,
+return
+GuiS:
+Gui, 2: Hide,
+Gui, GUIS: Show, x65 y30 w360 h280,
+return
+GuiMoon:
+Gui, 4: Hide,
+Gui, Moon: Show, x65 y30 w360 h280,
+return
+GuiExit4:
+Gui, 4: Show, x65 y30 w360 h280,
+Gui, Moon: Hide,
+return
+GuiSpamm:
+Gui, Spam: Show, x65 y30 w360 h280,
+Gui, 4: Hide,
+GUIControl, Spam: Enable, Msg
+GUIControl, Spam: Enable, key2
+return
+GuiFast1:
+Gui, 4: Show, x65 y30 w360 h280,
+Gui, Fast: Hide,
+Gui, 2: Hide
+Gui, 3: Hide
+Gui, Moon: Hide,
+Gui, Fast: Hide,
+Gui, GuiS: Hide,
+Gui, Comm11: Hide,
+return
+GuiFast:
+Gui, 4: Hide,
+Gui, Fast: Show, x65 y30 w360 h280,
+return
+Doub:
+Gui, 2: Hide,
+Gui, Doub: Show, x65 y30 w360 h280,
+return
+Comm11:
+GUIControl, comm11: Enable, Keys
+GUIControl, comm11: Enable, Com2
+Gui, 4: Hide,
+Gui, Comm11: Show, x65 y30 w360 h280,
+return
+Exit:
+SetWinDelay, -1
+SetControlDelay, -1
+SetMouseDelay, -1
+SetBatchLines, -1
+Process, priority,, Real time
+ExitApp
+return
+Hide:
+Gui, Hide,
+return
+GuiMove:
+SetWinDelay, -1
+SetControlDelay, -1
+SetMouseDelay, -1
+SetBatchLines, -1
+PostMessage, 0xA1, 2,,, A
+return
+BlackL:
+++countBlackL
+if countBlackL = 1
+{
+GuiControl, Show, Blaa
+GuiControl, Hide, Blaa1
+Hotkey, *~$1, On
+Hotkey, *~$2, On
+Hotkey, *~$3, On
+Hotkey, *~$4, On
+Hotkey, *~$5, On
+Hotkey, *~$6, On
+Hotkey, *~$7, On
+Hotkey, *~$8, On
+Hotkey, *~$9, On
+Detected := !Detected
+Clicked = 1
+}
+else if countBlackL = 2
+{
+GuiControl, Show, Blaa1
+GuiControl, Hide, Blaa
+Hotkey, *~$1, OFF
+Hotkey, *~$2, OFF
+Hotkey, *~$3, OFF
+Hotkey, *~$4, OFF
+Hotkey, *~$5, OFF
+Hotkey, *~$6, OFF
+Hotkey, *~$7, OFF
+Hotkey, *~$8, OFF
+Hotkey, *~$9, OFF
+Detected := !Detected
+Clicked = 1
+countBlackL := 0
+}
+return
+Jitter:
+++countJit
+if countJit = 1
+{
+GuiControl, Show, Jitter1
+GuiControl, Hide, Jitter2
+     SetTimer, StartStopJitter, Off
+Jitter := !Jitter
+}
+else if countJit = 2
+{
+GuiControl, Show, Jitter2
+GuiControl, Hide, Jitter1
+     SetTimer, StartStopJitter, Off
+Jitter := !Jitter
+countJit := 0
+}
+return
+C:
+++count
+if count = 1
+{
+GuiControl, Show, 0
+GuiControl, Hide, 1
+Clicker := !Clicker
+Hotkey, *~$LButton, Off
+Hotkey, *~$LButton Up, Off
+Hotkey, *~$VK2, Off
+Hotkey, *~$RButton, Off
+}
+else if count = 2
+{
+GuiControl, Show, 1
+GuiControl, Hide, 0
+Clicker := !Clicker
+Hotkey, *~$LButton, Off
+Hotkey, *~$LButton Up, Off
+Hotkey, *~$VK2, Off
+Hotkey, *~$RButton, Off
+count := 0
+}
+return
+A:
+++counta
+if counta = 1
+{
+GuiControl, Show, 2
+GuiControl, Hide, 3
+ClickerR := !ClickerR
+Hotkey, *~$LButton, Off
+Hotkey, *~$LButton Up, Off
+Hotkey, *~$VK2, Off
+Hotkey, *~$RButton, Off
+}
+else if counta = 2
+{
+GuiControl, Show, 3
+GuiControl, Hide, 2
+ClickerR := !ClickerR
+Hotkey, *~$LButton, Off
+Hotkey, *~$LButton Up, Off
+Hotkey, *~$VK2, Off
+Hotkey, *~$RButton, Off
+counta := 0
+}
+return
+Break:
+++countBB
+if countBB = 1
+{
+GuiControl, Show, B7
+GuiControl, Hide, B6
+Double := !Double
+}
+else if countBB = 2
+{
+GuiControl, Show, B6
+GuiControl, Hide, B7
+Double := !Double
+countBB := 0
+}
+return
+S:
+++counts
+if counts = 1
+{
+GuiControl, Show, 4
+GuiControl, Hide, 5
+Block := !Block
+Hotkey, *~$LButton, Off
+Hotkey, *~$LButton Up, Off
+Hotkey, *~$VK2, Off
+Hotkey, *~$RButton, Off
+}
+else if counts = 2
+{
+GuiControl, Show, 5
+GuiControl, Hide, 4
+Block := !Block
+Hotkey, *~$LButton, Off
+Hotkey, *~$LButton Up, Off
+Hotkey, *~$VK2, Off
+Hotkey, *~$RButton, Off
+counts := 0
+}
+return
+R:
+++countR
+if countR = 1
+{
+GuiControl, Show, 6
+GuiControl, Hide, 7
+Random := !Random
+}
+else if countR = 2
+{
+GuiControl, Show, 7
+GuiControl, Hide, 6
+Random := !Random
+countR := 0
+}
+return
+Y:
+++countY
+if countY = 1
+{
+GuiControl, Show, 8
+GuiControl, Hide, 9
+Hotkey, *~$W, On
+Hotkey, *~$W Up, On
+Hotkey, *~$vk1B, On
+}
+else if countY = 2
+{
+GuiControl, Show, 9
+GuiControl, Hide, 8
+Hotkey, *~$W, Off
+Hotkey, *~$W Up, Off
+Hotkey, *~$vk1B, Off
+countY := 0
+}
+return
+Y1:
+++countY1
+if countY1 = 1
+{
+GuiControl, Show, 81
+GuiControl, Hide, 91
+Gui, Top: +AlwaysOnTop
+}
+else if countY1 = 2
+{
+GuiControl, Show, 91
+GuiControl, Hide, 81
+Gui, Top: -AlwaysOnTop
+countY1 := 0
+}
+return
+count = 60
+*~$LButton::
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+LButton = LButton
+Clicked1 = 1
+Process, priority,, Real time
+If Double
+SetTimer, StartStopDouble, %ButtonValueK%
+If Jitter
+SetTimer, StartStopJitter, 1
+If Block
+Hotkey, *~$Vk2, On
+If Block
+Hotkey, *~$RButton, Off
+If Clicker
+Loop
+IfWinActive, %Title%
+{
+GetKeyState, LButtonState, LButton, P
+If LButtonState = U
+break
+SetBatchLines, 10
+SetMouseDelay, -1
+Click, Left,  %Clicked%
+Sleep 1
+Sleep, %ButtonValue7%
+If Random
+Random, Rand, %ButtonValue8%, %ButtonValue9%
+If Random
+sleep %Rand%
+}
+     SetTimer, StartStopJitter, Off
+     SetTimer, StartStopDouble, Off
+return
+Bind1:
+Hotkey, %MyHotKeyString1%, keyString1, off, useerrorlevel
+Gui, Submit, NoHide
+Hotkey, %MyHotKeyString1%, keyString1, on, useerrorlevel
+Return
+KeyString1:
+IfWinActive, %Title%
+SetBatchLines, -1
+SetWinDelay, -1
+SetControlDelay, -1
+If DisableS
+SendInput, {%LButton% Down}{%RButton% Down}  
+Hotkey, *~$LButton, toggle
+Hotkey, *~$LButton Up, toggle
+Hotkey, *~$VK2, Off
+If Rig
+Hotkey, *~$RButton, Toggle
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Process, priority,, Real time
+LButton =
+RButton =
+Suspend
+Suspend
+Return
+StartStopJitter:
+MouseGetPos, X, Y
+Random, Xx, -%ButtonValue19%, %ButtonValue19%
+Random, Yy, -%ButtonValue19%, %ButtonValue19%
+X:= Xx + X
+Y:= Yy + Y
+MouseMove, X, Y
+return
+StartStopDouble:
+Click, Left, %Clicked%
+Sleep 10
+Click, Left, %Clicked%
+return
+
+*~$LButton Up::
+SetBatchLines, -1
+SetWinDelay, -1
+SetControlDelay, -1
+LButton =
+RButton =
+Clicked1 = 0
+If Block
+Hotkey, *~$Vk2, Off
+If Prov
+If ClickerR
+Hotkey, *~$RButton, on
+     SetTimer, StartStopJitter, Off
+     SetTimer, StartStopDouble, Off
+If BlockHit
+Suspend
+If BlockHit
+Suspend
+return
+*~$VK2 Up::
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+RButton =
+If White1
+If Block
+Hotkey, *~$VK2 Up, Off
+If BlockHitIn
+Clicked1 = 1
+return
+count = 60
+*~$VK2::
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+If Double
+SetTimer, StartStopDouble, Off
+Click, Right, %Clicked%
+If Jitter
+SetTimer, StartStopJitter, Off
+SetTimer, StartStopRight, %ButtonValuei%
+SetTimer, StartStopRight, On
+RButton = RButton
+If Jitter
+SetTimer, StartStopJitter, 1
+If Clicker
+If Block
+Hotkey, *~$VK2 Up, On
+If White1
+Loop
+IfWinActive, %Title%
+{
+GetKeyState, RButtonState, RButton, P
+If RButtonState = U
+break
+SetBatchLines, 10
+SetMouseDelay, -1
+Click Left, %Clicked1%
+Sleep, %ButtonValue7%
+Sleep 1
+If Random
+Random, Rand, %ButtonValue8%, %ButtonValue9%
+If Random
+sleep %Rand%
+}
+     SetTimer, StartStopRight, off
+If Double
+     SetTimer, StartStopDouble, %ButtonValueK%
+return
+StartStopRight:
+SetBatchLines, -1
+SetWinDelay, -1
+SetControlDelay, -1
+Click, Right, %Clicked%
+return
+
+*~$RButton::
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Process, priority,, Real time
+If BlockChange
+SetTimer, Middle, 90
+If ClickerR
+Loop
+IfWinActive, %Title%
+{
+GetKeyState, RButtonState, RButton, P
+If RButtonState = U
+break
+SetBatchLines, 10
+SetMouseDelay, -1
+Click, Right, 1
+Sleep 1
+Sleep, %ButtonValue6%
+If Random
+Random, Rand, %ButtonValue8%, %ButtonValue9%
+If Random
+sleep %Rand%
+}
+SetTimer, Middle, Off
+return
+Middle:
+Click, Middle, 1
+return
+Bind2:
+Hotkey, %MyHotKeyString2%, keyString2, off, useerrorlevel
+Gui, Submit, NoHide
+Hotkey, %MyHotKeyString2%, keyString2, on, useerrorlevel
+Return
+KeyString2:
+IfWinActive, %Title%
+SetBatchLines, -1
+SetWinDelay, -1
+SetControlDelay, -1
+Hotkey, *~$RButton, toggle
+Prov := !Prov
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Process, priority,, Real time
+Suspend
+Suspend
+Return
+
+hSlider7:
+SetTimer,Adjust_Slider7,0
+fn7 := Func("MouseMove7").Bind(SliderBackground7,SliderHandle7)
+OnMessage(0x201,fn7)
+return
+Adjust_Slider7:
+if(GetKeyState("LButton")){
+CoordMode,Mouse,Client
+MouseGetPos,ty
+(ty<87)?(ty:=87):(ty>187)?(ty:=187)
+ButtonValue7:=((ty-87)*+3)-0, Active7:=1
+GuiControl,,% SliderBackground7,% ButtonValue7
+GuiControl,MoveDraw,% SliderHandle7,%  "x" ty
+GuiControl,,% DisplayText7,% ButtonValue7
+}else   {
+SetTimer,Adjust_Slider7,Off
+Active7:=0
+return
+}
+return
+MouseMove7(SliderBackground7,SliderHandle7) {
+MouseGetPos,,,,ctrl,2
+if(!Active&&(ctrl=SliderBackground7||ctrl=SliderHandle7))
+SetTimer,Adjust_Slider7,0
+}
+return
+hSlider6:
+SetTimer,Adjust_Slider6,0
+fn6 := Func("MouseMove6").Bind(SliderBackground6,SliderHandle6)
+OnMessage(0x201,fn6)
+return
+Adjust_Slider6:
+if(GetKeyState("LButton")){
+CoordMode,Mouse,Client
+MouseGetPos,ty
+(ty<87)?(ty:=87):(ty>187)?(ty:=187)
+ButtonValue6:=((ty-87)*+3)-0, Active6:=1
+GuiControl,,% SliderBackground6,% ButtonValue6
+GuiControl,MoveDraw,% SliderHandle6,%  "x" ty
+GuiControl,,% DisplayText6,% ButtonValue6
+}else   {
+SetTimer,Adjust_Slider6,Off
+Active6:=0
+return
+}
+return
+MouseMove6(SliderBackground6,SliderHandle6) {
+MouseGetPos,,,,ctrl,2
+if(!Active&&(ctrl=SliderBackground6||ctrl=SliderHandle6))
+SetTimer,Adjust_Slider6,0
+}
+return
+hSlider8:
+SetTimer,Adjust_Slider8,0
+fn8 := Func("MouseMove8").Bind(SliderBackground8,SliderHandle8)
+OnMessage(0x201,fn8)
+return
+Adjust_Slider8:
+if(GetKeyState("LButton")){
+CoordMode,Mouse,Client
+MouseGetPos,ty
+(ty<86)?(ty:=86):(ty>186)?(ty:=186)
+ButtonValue8:=((ty-86)*+2)-0, Active8:=1
+GuiControl,,% SliderBackground8,% ButtonValue8
+GuiControl,MoveDraw,% SliderHandle8,%  "x" ty
+GuiControl,,% DisplayText8,% ButtonValue8
+}else   {
+SetTimer,Adjust_Slider8,Off
+Active8:=0
+return
+}
+return
+MouseMove8(SliderBackground8,SliderHandle8) {
+MouseGetPos,,,,ctrl,2
+if(!Active&&(ctrl=SliderBackground8||ctrl=SliderHandle8))
+SetTimer,Adjust_Slider8,0
+}
+return
+hSlider9:
+SetTimer,Adjust_Slider9,0
+fn9 := Func("MouseMove9").Bind(SliderBackground9,SliderHandle9)
+OnMessage(0x201,fn9)
+return
+Adjust_Slider9:
+if(GetKeyState("LButton")){
+CoordMode,Mouse,Client
+MouseGetPos,ty
+(ty<86)?(ty:=86):(ty>186)?(ty:=186)
+ButtonValue9:=((ty-86)*+2)-0, Active9:=1
+GuiControl,,% SliderBackground9,% ButtonValue9
+GuiControl,MoveDraw,% SliderHandle9,%  "x" ty
+GuiControl,,% DisplayText9,% ButtonValue9
+}else   {
+SetTimer,Adjust_Slider9,Off
+Active9:=0
+return
+}
+return
+MouseMove9(SliderBackground9,SliderHandle9) {
+MouseGetPos,,,,ctrl,2
+if(!Active&&(ctrl=SliderBackground9||ctrl=SliderHandle9))
+SetTimer,Adjust_Slider9,0
+}
+return
+hSlider19:
+SetTimer,Adjust_Slider19,0
+fn19 := Func("MouseMove19").Bind(SliderBackground19,SliderHandle19)
+OnMessage(0x201,fn19)
+return
+Adjust_Slider19:
+if(GetKeyState("LButton")){
+CoordMode,Mouse,Client
+MouseGetPos,ty
+(ty<86)?(ty:=86):(ty>186)?(ty:=186)
+ButtonValue19:=((ty-86)*+1)-0, Active19:=1
+GuiControl,,% SliderBackground19,% ButtonValue19
+GuiControl,MoveDraw,% SliderHandle19,%  "x" ty
+GuiControl,,% DisplayText19,% ButtonValue19
+}else   {
+SetTimer,Adjust_Slider19,Off
+Active19:=0
+return
+}
+return
+MouseMove19(SliderBackground19,SliderHandle19) {
+MouseGetPos,,,,ctrl,2
+if(!Active&&(ctrl=SliderBackground19||ctrl=SliderHandle19))
+SetTimer,Adjust_Slider19,0
+}
+return
+ShowGui:
+Gui, Top: Show,,
+return
+ExitApp:
+SetWinDelay, -1
+SetControlDelay, -1
+SetMouseDelay, -1
+SetBatchLines, -1
+ExitApp
+return
+*~$vk57::
+SendInput, {ctrl Down}
+return
+*~$vk57 Up::
+SendInput, {ctrl Up}
+return
+*~$w::
+SendInput, {Ctrl Down}
+return
+*~$w Up::
+SendInput, {Ctrl Up}
+Return
+*~$vk1B::
+SendInput, {Ctrl Up}
+return
+*~$1::
+IfWinActive, %Title%
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Clicked = %01%
+Clicked1 = %01%
+SendInput, {%LButton% Down}{%RButton% Down}
+return
+*~$2::
+IfWinActive, %Title%
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Clicked = %02%
+Clicked1 = %02%
+SendInput, {%LButton% Down}{%RButton% Down}
+return
+*~$3::
+IfWinActive, %Title%
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Clicked = %03%
+Clicked1 = %03%
+SendInput, {%LButton% Down}{%RButton% Down}
+return
+*~$4::
+IfWinActive, %Title%
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Clicked1 = %04%
+Clicked = %04%
+SendInput, {%LButton% Down}{%RButton% Down}
+return
+*~$5::
+IfWinActive, %Title%
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Clicked = %05%
+Clicked1 = %05%
+SendInput, {%LButton% Down}{%RButton% Down}
+return
+*~$6::
+IfWinActive, %Title%
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Clicked = %06%
+Clicked1 = %06%
+SendInput, {%LButton% Down}{%RButton% Down}
+return
+*~$7::
+IfWinActive, %Title%
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Clicked = %07%
+Clicked1 = %07%
+SendInput, {%LButton% Down}{%RButton% Down}
+return
+*~$8::
+IfWinActive, %Title%
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Clicked = %08%
+Clicked1 = %08%
+SendInput, {%LButton% Down}{%RButton% Down}
+return
+*~$9::
+IfWinActive, %Title%
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Clicked = %09%
+Clicked1 = %09%
+SendInput, {%LButton% Down}{%RButton% Down}
+return
+Bind7:
+Hotkey, %MyHotKeyString7%, keyString7, off, useerrorlevel
+Gui, Submit, NoHide
+Hotkey, %MyHotKeyString7%, keyString7, on, useerrorlevel
+Return
+KeyString7:
+If Toggleee
+++countToggle
+if countToggle = 1
+{
+Hotkey, *~$vk57, Off
+Hotkey, *~$vk57 Up, Off
+SendInput, {Ctrl Up}
+}
+else if countToggle = 2
+{
+Hotkey, *~$vk57, On
+Hotkey, *~$vk57 Up, On
+SendInput, {Ctrl Up}
+countToggle := 0
+}
+return
+BindSpammer1:
+GuiControl, 4:, TestSpammer1, Bind [Press a key]
+   SetTimer, StartStop1, -10
+String = MyHotKeyStringSpammer
+bin = TestSpammer1
+Gui = 4:
+return
+
+BindStuck:
+GuiControl, 4:, TestStuck, Bind [Press a key]
+   SetTimer, StartStop1, -10
+String = MyHotKeyStringAir
+bin = TestStuck
+Gui = 4:
+return
+
+BindSkyy:
+GuiControl, 4:, TestSky, Bind [Press a key]
+   SetTimer, StartStop1, -10
+String = MyHotKeyStringSky
+bin = TestSky
+Gui = 4:
+return
+
+BindIgnore:
+GuiControl, Home:, TestIgnore, Bind [Press a key]
+   SetTimer, StartStop1, -10
+String = MyHotKeyStringIg
+bin = TestIgnore
+Gui = Home:
+return
+
+BindCommand:
+GuiControl, 4:, TestCommand, Bind [Press a key]
+   SetTimer, StartStop1, -10
+String = MyHotKeyString18
+bin = TestCommand
+Gui = 4:
+return
+
+BindMoon:
+GuiControl, 4:, TestMoon, Bind [Press a key]
+   SetTimer, StartStop1, -10
+String = MyHotKeyString12
+bin = TestMoon
+Gui = 4:
+return
+
+BindFast:
+GuiControl, 4:, Test11, Bind [Press a key]
+   SetTimer, StartStop1, -10
+String = MyHotKeyString11
+bin = Test11
+Gui = 4:
+return
+
+Bind10:
+GuiControl, Home:, Test10, Bind [Press a key]
+   SetTimer, StartStop1, -10
+String = MyHotKeyString8
+bin = Test10
+Gui = Home:
+return
+
+Bind9:
+GuiControl, 3:, Test9, Bind [Press a key]
+   SetTimer, StartStop1, -10
+String = MyHotKeyString7
+bin = Test9
+Gui = 3:
+return
+Bind6:
+GuiControl, 2:, Test6, Bind [Press a key]
+   SetTimer, StartStop1, -10
+String = MyHotKeyString2
+bin = Test6
+Gui = 2:
+return
+Bind:
+GuiControl, 2:, Test1, Bind [Press a key]
+   SetTimer, StartStop1, -10
+String = MyHotKeyString1
+bin = Test1
+Gui = 2:
+return
+*~$sc2::
+GuiControl, %Gui%, %bin%, Bind [1]
+GuiControl, %Gui%, %String%, *~$1
+   SetTimer, StartStop, -10
+return
+*~$sc3::
+GuiControl, %Gui%, %bin%, Bind [2]
+GuiControl, %Gui%, %String%, *~$2
+   SetTimer, StartStop, -10
+return
+*~$sc4::
+GuiControl, %Gui%, %bin%, Bind [3]
+GuiControl, %Gui%, %String%, *~$3
+   SetTimer, StartStop, -10
+return
+*~$sc5::
+GuiControl, %Gui%, %bin%, Bind [4]
+GuiControl, %Gui%, %String%, *~$4
+   SetTimer, StartStop, -10
+return
+*~$sc6::
+GuiControl, %Gui%, %bin%, Bind [5]
+GuiControl, %Gui%, %String%, *~$5
+   SetTimer, StartStop, -10
+return
+*~$sc7::
+GuiControl, %Gui%, %bin%, Bind [6]
+GuiControl, %Gui%, %String%, *~$6
+   SetTimer, StartStop, -10
+return
+*~$sc8::
+GuiControl, %Gui%, %bin%, Bind [7]
+GuiControl, %Gui%, %String%, *~$7
+   SetTimer, StartStop, -10
+return
+*~$sc9::
+GuiControl, %Gui%, %bin%, Bind [8]
+GuiControl, %Gui%, %String%, *~$8
+   SetTimer, StartStop, -10
+return
+*~$scA::
+GuiControl, %Gui%, %bin%, Bind [9]
+GuiControl, %Gui%, %String%, *~$9
+   SetTimer, StartStop, -10
+return
+*~$scB::
+GuiControl, %Gui%, %bin%, Bind [0]
+GuiControl, %Gui%, %String%, *~$0
+   SetTimer, StartStop, -10
+return
+*~$sc10::
+GuiControl, %Gui%, %bin%, Bind [Q]
+GuiControl, %Gui%, %String%, *~$Q
+   SetTimer, StartStop, -10
+return
+*~$sc11::
+GuiControl, %Gui%, %bin%, Bind [W]
+GuiControl, %Gui%, %String%, *~$W
+   SetTimer, StartStop, -10
+return
+*~$sc12::
+GuiControl, %Gui%, %bin%, Bind [E]
+GuiControl, %Gui%, %String%, *~$E
+   SetTimer, StartStop, -10
+return
+*~$sc13::
+GuiControl, %Gui%, %bin%, Bind [R]
+GuiControl, %Gui%, %String%, *~$R
+   SetTimer, StartStop, -10
+return
+*~$sc14::
+GuiControl, %Gui%, %bin%, Bind [T]
+GuiControl, %Gui%, %String%, *~$T
+   SetTimer, StartStop, -10
+return
+*~$sc15::
+GuiControl, %Gui%, %bin%, Bind [Y]
+GuiControl, %Gui%, %String%, *~$Y
+   SetTimer, StartStop, -10
+return
+*~$sc16::
+GuiControl, %Gui%, %bin%, Bind [U]
+GuiControl, %Gui%, %String%, *~$U
+   SetTimer, StartStop, -10
+return
+*~$sc17::
+GuiControl, %Gui%, %bin%, Bind [I]
+GuiControl, %Gui%, %String%, *~$I
+   SetTimer, StartStop, -10
+return
+*~$sc18::
+GuiControl, %Gui%, %bin%, Bind [O]
+GuiControl, %Gui%, %String%, *~$O
+   SetTimer, StartStop, -10
+return
+*~$sc19::
+GuiControl, %Gui%, %bin%, Bind [P]
+GuiControl, %Gui%, %String%, *~$P
+   SetTimer, StartStop, -10
+return
+*~$sc1E::
+GuiControl, %Gui%, %bin%, Bind [A]
+GuiControl, %Gui%, %String%, *~$A
+   SetTimer, StartStop, -10
+return
+*~$sc1F::
+GuiControl, %Gui%, %bin%, Bind [S]
+GuiControl, %Gui%, %String%, *~$S
+   SetTimer, StartStop, -10
+return
+*~$sc20::
+GuiControl, %Gui%, %bin%, Bind [D]
+GuiControl, %Gui%, %String%, *~$D
+   SetTimer, StartStop, -10
+return
+*~$sc21::
+GuiControl, %Gui%, %bin%, Bind [F]
+GuiControl, %Gui%, %String%, *~$F
+   SetTimer, StartStop, -10
+return
+*~$sc22::
+GuiControl, %Gui%, %bin%, Bind [G]
+GuiControl, %Gui%, %String%, *~$G
+   SetTimer, StartStop, -10
+return
+*~$sc23::
+GuiControl, %Gui%, %bin%, Bind [H]
+GuiControl, %Gui%, %String%, *~$H
+   SetTimer, StartStop, -10
+return
+*~$sc24::
+GuiControl, %Gui%, %bin%, Bind [J]
+GuiControl, %Gui%, %String%, *~$J
+   SetTimer, StartStop, -10
+return
+*~$sc25::
+GuiControl, %Gui%, %bin%, Bind [K]
+GuiControl, %Gui%, %String%, *~$K
+   SetTimer, StartStop, -10
+return
+*~$sc39::
+GuiControl, %Gui%, %bin%, Bind [None]
+GuiControl, %Gui%, %String%, ^!#G $ Q
+   SetTimer, StartStop, -10
+return
+*~$sc26::
+GuiControl, %Gui%, %bin%, Bind [L]
+GuiControl, %Gui%, %String%, *~$L
+   SetTimer, StartStop, -10
+return
+*~$sc2C::
+GuiControl, %Gui%, %bin%, Bind [Z]
+GuiControl, %Gui%, %String%, *~$Z
+   SetTimer, StartStop, -10
+return
+*~$sc2D::
+GuiControl, %Gui%, %bin%, Bind [X]
+GuiControl, %Gui%, %String%, *~$X
+   SetTimer, StartStop, -10
+return
+*~$sc2E::
+GuiControl, %Gui%, %bin%, Bind [C]
+GuiControl, %Gui%, %String%, *~$C
+   SetTimer, StartStop, -10
+return
+*~$sc2F::
+GuiControl, %Gui%, %bin%, Bind [V]
+GuiControl, %Gui%, %String%, *~$V
+   SetTimer, StartStop, -10
+return
+*~$sc30::
+GuiControl, %Gui%, %bin%, Bind [B]
+GuiControl, %Gui%, %String%, *~$B
+   SetTimer, StartStop, -10
+return
+*~$sc31::
+GuiControl, %Gui%, %bin%, Bind [N]
+GuiControl, %Gui%, %String%, *~$N
+   SetTimer, StartStop, -10
+return
+*~$sc32::
+GuiControl, %Gui%, %bin%, Bind [M]
+GuiControl, %Gui%, %String%, *~$M
+   SetTimer, StartStop, -10
+return
+*~$sc3B::
+GuiControl, %Gui%, %bin%, Bind [F1]
+GuiControl, %Gui%, %String%, *~$F1
+   SetTimer, StartStop, -10
+return
+*~$sc3C::
+GuiControl, %Gui%, %bin%, Bind [F2]
+GuiControl, %Gui%, %String%, *~$F2
+   SetTimer, StartStop, -10
+return
+*~$sc3D::
+GuiControl, %Gui%, %bin%, Bind [F3]
+GuiControl, %Gui%, %String%, *~$F3
+   SetTimer, StartStop, -10
+return
+*~$sc3E::
+GuiControl, %Gui%, %bin%, Bind [F4]
+GuiControl, %Gui%, %String%, *~$F4
+   SetTimer, StartStop, -10
+return
+*~$sc3F::
+GuiControl, %Gui%, %bin%, Bind [F5]
+GuiControl, %Gui%, %String%, *~$F5
+   SetTimer, StartStop, -10
+return
+*~$sc40::
+GuiControl, %Gui%, %bin%, Bind [F6]
+GuiControl, %Gui%, %String%, *~$F6
+   SetTimer, StartStop, -10
+return
+*~$sc41::
+GuiControl, %Gui%, %bin%, Bind [F7]
+GuiControl, %Gui%, %String%, *~$F7
+   SetTimer, StartStop, -10
+return
+*~$sc42::
+GuiControl, %Gui%, %bin%, Bind [F8]
+GuiControl, %Gui%, %String%, *~$F8
+   SetTimer, StartStop, -10
+return
+*~$sc43::
+GuiControl, %Gui%, %bin%, Bind [F9]
+GuiControl, %Gui%, %String%, *~$F9
+   SetTimer, StartStop, -10
+return
+*~$sc44::
+GuiControl, %Gui%, %bin%, Bind [F10]
+GuiControl, %Gui%, %String%, *~$F10
+   SetTimer, StartStop, -10
+return
+*~$sc57::
+GuiControl, %Gui%, %bin%, Bind [F11]
+GuiControl, %Gui%, %String%, *~$F11
+   SetTimer, StartStop, -10
+return
+*~$sc58::
+GuiControl, %Gui%, %bin%, Bind [F12]
+GuiControl, %Gui%, %String%, *~$F12
+   SetTimer, StartStop, -10
+return
+*~$scE::
+GuiControl, %Gui%, %bin%, Bind [Backspace]
+GuiControl, %Gui%, %String%, *~$Backspace
+   SetTimer, StartStop, -10
+return
+*~$scF::
+GuiControl, %Gui%, %bin%, Bind [Tab]
+GuiControl, %Gui%, %String%, *~$Tab
+   SetTimer, StartStop, -10
+return
+*~$sc3A::
+GuiControl, %Gui%, %bin%, Bind [CapsLock]
+GuiControl, %Gui%, %String%, *~$CapsLock
+   SetTimer, StartStop, -10
+return
+*~$sc2A::
+GuiControl, %Gui%, %bin%, Bind [LShift]
+GuiControl, %Gui%, %String%, *~$LShift
+   SetTimer, StartStop, -10
+return
+*~$sc38::
+GuiControl, %Gui%, %bin%, Bind [LAlt]
+GuiControl, %Gui%, %String%, *~$LAlt
+   SetTimer, StartStop, -10
+return
+*~$sc152::
+GuiControl, %Gui%, %bin%, Bind [Insert]
+GuiControl, %Gui%, %String%, *~$Insert
+   SetTimer, StartStop, -10
+return
+*~$sc147::
+GuiControl, %Gui%, %bin%, Bind [Home]
+GuiControl, %Gui%, %String%, *~$Home
+   SetTimer, StartStop, -10
+return
+*~$sc149::
+GuiControl, %Gui%, %bin%, Bind [PgUp]
+GuiControl, %Gui%, %String%, *~$PgUp
+   SetTimer, StartStop, -10
+return
+*~$sc153::
+GuiControl, %Gui%, %bin%, Bind [Delete]
+GuiControl, %Gui%, %String%, *~$Delete
+   SetTimer, StartStop, -10
+return
+*~$sc14F::
+GuiControl, %Gui%, %bin%, Bind [End]
+GuiControl, %Gui%, %String%, *~$End
+   SetTimer, StartStop, -10
+return
+*~$sc151::
+GuiControl, %Gui%, %bin%, Bind [PgDn]
+GuiControl, %Gui%, %String%, *~$PgDn
+   SetTimer, StartStop, -10
+return
+*~$sc148::
+GuiControl, %Gui%, %bin%, Bind [Up]
+GuiControl, %Gui%, %String%, *~$Up
+   SetTimer, StartStop, -10
+return
+*~$sc14B::
+GuiControl, %Gui%, %bin%, Bind [Left]
+GuiControl, %Gui%, %String%, *~$Left
+   SetTimer, StartStop, -10
+return
+*~$sc150::
+GuiControl, %Gui%, %bin%, Bind [Down]
+GuiControl, %Gui%, %String%, *~$Down
+   SetTimer, StartStop, -10
+return
+*~$sc14D::
+GuiControl, %Gui%, %bin%, Bind [Right]
+GuiControl, %Gui%, %String%, *~$Right
+   SetTimer, StartStop, -10
+return
+*~$sc29::
+GuiControl, %Gui%, %bin%, Bind [~]
+GuiControl, %Gui%, %String%, *~$vkC0
+   SetTimer, StartStop, -10
+return
+*~$vkA1::
+GuiControl, %Gui%, %bin%, Bind [RShift]
+GuiControl, %Gui%, %String%, *~$RShift
+   SetTimer, StartStop, -10
+return
+*~$sc1C::
+GuiControl, %Gui%, %bin%, Bind [Enter]
+GuiControl, %Gui%, %String%, *~$Enter
+   SetTimer, StartStop, -10
+return
+*~$Vk6::
+GuiControl, %Gui%, %bin%, Bind [XButton2]
+GuiControl, %Gui%, %String%, *~$XButton2
+   SetTimer, StartStop, -10
+return
+*~$Vk5::
+GuiControl, %Gui%, %bin%, Bind [XButton1]
+GuiControl, %Gui%, %String%, *~$XButton1
+   SetTimer, StartStop, -10
+return
+*~$Vk4::
+GuiControl, %Gui%, %bin%, Bind [MButton]
+GuiControl, %Gui%, %String%, *~$MButton
+   SetTimer, StartStop, -10
+return
+
+*~$sc35::
+GuiControl, %Gui%, %bin%, Bind [Slash]
+GuiControl, %Gui%, %String%, *~$vkBF
+   SetTimer, StartStop, -10
+return
+
+*~$sc1A::
+GuiControl, %Gui%, %bin%, Bind [Bracket Right]
+GuiControl, %Gui%, %String%, *~$vkDB
+   SetTimer, StartStop, -10
+return
+
+*~$sc1B::
+GuiControl, %Gui%, %bin%, Bind [Bracket Left]
+GuiControl, %Gui%, %String%, *~$vkDD
+   SetTimer, StartStop, -10
+return
+
+*~$sc1::
+GuiControl, %Gui%, %bin%, Bind [None]
+GuiControl, %Gui%, %String%, *~$^!#G $ Q
+   SetTimer, StartStop, -10
+return
+
+
+*~$vkA5::
+GuiControl, %Gui%, %bin%, Bind [RAlt]
+GuiControl, %Gui%, %String%, *~$RAlt
+   SetTimer, StartStop, -10
+return
+
+*~$vkA3::
+GuiControl, %Gui%, %bin%, Bind [RCtrl]
+GuiControl, %Gui%, %String%, *~$RCtrl
+      SetTimer, StartStop, -10
+return
+
+*~$scC::
+GuiControl, %Gui%, %bin%, Bind [Minus]
+GuiControl, %Gui%, %String%, *~$vkBD
+      SetTimer, StartStop, -10
+return
+
+*~$scD::
+GuiControl, %Gui%, %bin%, Bind [Plus]
+GuiControl, %Gui%, %String%, *~$vkBB
+      SetTimer, StartStop, -10
+return
+
+
+*~$^sc35::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Slash]
+GuiControl, %Gui%, %String%, *~$^vkBF
+   SetTimer, StartStop, -10
+return
+
+*~$^sc2::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+1]
+GuiControl, %Gui%, %String%, *~$^1
+   SetTimer, StartStop, -10
+return
+*~$^sc3::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+2]
+GuiControl, %Gui%, %String%, *~$^2
+   SetTimer, StartStop, -10
+return
+*~$^sc4::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+3]
+GuiControl, %Gui%, %String%, *~$^3
+   SetTimer, StartStop, -10
+return
+*~$^sc5::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+4]
+GuiControl, %Gui%, %String%, *~$^4
+   SetTimer, StartStop, -10
+return
+*~$^sc6::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+5]
+GuiControl, %Gui%, %String%, *~$^5
+   SetTimer, StartStop, -10
+return
+*~$^sc7::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+6]
+GuiControl, %Gui%, %String%, *~$^6
+   SetTimer, StartStop, -10
+return
+*~$^sc8::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+7]
+GuiControl, %Gui%, %String%, *~$^7
+   SetTimer, StartStop, -10
+return
+*~$^sc9::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+8]
+GuiControl, %Gui%, %String%, *~$^8
+   SetTimer, StartStop, -10
+return
+*~$^scA::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+9]
+GuiControl, %Gui%, %String%, *~$^9
+   SetTimer, StartStop, -10
+return
+*~$^scB::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+0]
+GuiControl, %Gui%, %String%, *~$^0
+   SetTimer, StartStop, -10
+return
+*~$^sc10::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Q]
+GuiControl, %Gui%, %String%, *~$^Q
+   SetTimer, StartStop, -10
+return
+*~$^sc11::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+W]
+GuiControl, %Gui%, %String%, *~$^W
+   SetTimer, StartStop, -10
+return
+*~$^sc12::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+E]
+GuiControl, %Gui%, %String%, *~$^E
+   SetTimer, StartStop, -10
+return
+*~$^sc13::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+R]
+GuiControl, %Gui%, %String%, *~$^R
+   SetTimer, StartStop, -10
+return
+*~$^sc14::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+T]
+GuiControl, %Gui%, %String%, *~$^T
+   SetTimer, StartStop, -10
+return
+*~$^sc15::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Y]
+GuiControl, %Gui%, %String%, *~$^Y
+   SetTimer, StartStop, -10
+return
+*~$^sc16::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+U]
+GuiControl, %Gui%, %String%, *~$^U
+   SetTimer, StartStop, -10
+return
+*~$^sc17::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+I]
+GuiControl, %Gui%, %String%, *~$^I
+   SetTimer, StartStop, -10
+return
+*~$^sc18::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+O]
+GuiControl, %Gui%, %String%, *~$^O
+   SetTimer, StartStop, -10
+return
+*~$^sc19::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+P]
+GuiControl, %Gui%, %String%, *~$^P
+   SetTimer, StartStop, -10
+return
+*~$^sc1E::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+A]
+GuiControl, %Gui%, %String%, *~$^A
+   SetTimer, StartStop, -10
+return
+*~$^sc1F::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+S]
+GuiControl, %Gui%, %String%, *~$^S
+   SetTimer, StartStop, -10
+return
+*~$^sc20::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+D]
+GuiControl, %Gui%, %String%, *~$^D
+   SetTimer, StartStop, -10
+return
+*~$^sc21::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F]
+GuiControl, %Gui%, %String%, *~$^F
+  SetTimer, StartStop, -10
+return
+*~$^sc22::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+G]
+GuiControl, %Gui%, %String%, *~$^G
+   SetTimer, StartStop, -10
+return
+*~$^sc23::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+H]
+GuiControl, %Gui%, %String%, *~$^H
+   SetTimer, StartStop, -10
+return
+*~$^sc24::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+J]
+GuiControl, %Gui%, %String%, *~$^J
+   SetTimer, StartStop, -10
+return
+*~$^sc25::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+K]
+GuiControl, %Gui%, %String%, *~$^K
+   SetTimer, StartStop, -10
+return
+*~$^sc39::
+GuiControl, %Gui%, %bin%, Bind [None]
+GuiControl, %Gui%, %String%, *~$None
+   SetTimer, StartStop, -10
+return
+*~$^sc26::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+L]
+GuiControl, %Gui%, %String%, *~$^L
+   SetTimer, StartStop, -10
+return
+*~$^sc2C::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Z]
+GuiControl, %Gui%, %String%, *~$^Z
+   SetTimer, StartStop, -10
+return
+*~$^sc2D::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+X]
+GuiControl, %Gui%, %String%, *~$^X
+   SetTimer, StartStop, -10
+return
+*~$^sc2E::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+C]
+GuiControl, %Gui%, %String%, *~$^C
+   SetTimer, StartStop, -10
+return
+*~$^sc2F::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+V]
+GuiControl, %Gui%, %String%, *~$^V
+   SetTimer, StartStop, -10
+return
+*~$^sc30::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+B]
+GuiControl, %Gui%, %String%, *~$^B
+   SetTimer, StartStop, -10
+return
+*~$^sc31::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+N]
+GuiControl, %Gui%, %String%, *~$^N
+   SetTimer, StartStop, -10
+return
+*~$^sc32::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+M]
+GuiControl, %Gui%, %String%, *~$^M
+   SetTimer, StartStop, -10
+return
+*~$^sc3B::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F1]
+GuiControl, %Gui%, %String%, *~$^F1
+   SetTimer, StartStop, -10
+return
+*~$^sc3C::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F2]
+GuiControl, %Gui%, %String%, *~$^F2
+   SetTimer, StartStop, -10
+return
+*~$^sc3D::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F3]
+GuiControl, %Gui%, %String%, *~$^F3
+   SetTimer, StartStop, -10
+return
+*~$^sc3E::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F4]
+GuiControl, %Gui%, %String%, *~$^F4
+   SetTimer, StartStop, -10
+return
+*~$^sc3F::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F5]
+GuiControl, %Gui%, %String%, *~$^F5
+   SetTimer, StartStop, -10
+return
+*~$^sc40::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F6]
+GuiControl, %Gui%, %String%, *~$^F6
+   SetTimer, StartStop, -10
+return
+*~$^sc41::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F7]
+GuiControl, %Gui%, %String%, *~$^F7
+   SetTimer, StartStop, -10
+return
+*~$^sc42::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F8]
+GuiControl, %Gui%, %String%, *~$^F8
+   SetTimer, StartStop, -10
+return
+*~$^sc43::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F9]
+GuiControl, %Gui%, %String%, *~$^F9
+   SetTimer, StartStop, -10
+return
+*~$^sc44::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F10]
+GuiControl, %Gui%, %String%, *~$^F10
+   SetTimer, StartStop, -10
+return
+*~$^sc57::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F11]
+GuiControl, %Gui%, %String%, *~$^F11
+   SetTimer, StartStop, -10
+return
+*~$^sc58::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+F12]
+GuiControl, %Gui%, %String%, *~$^F12
+   SetTimer, StartStop, -10
+return
+*~$^scE::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Backspace]
+GuiControl, %Gui%, %String%, *~$^Backspace
+   SetTimer, StartStop, -10
+return
+*~$^scF::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Tab]
+GuiControl, %Gui%, %String%, *~$^Tab
+   SetTimer, StartStop, -10
+return
+*~$^sc3A::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+CapsLock]
+GuiControl, %Gui%, %String%, *~$^CapsLock
+   SetTimer, StartStop, -10
+return
+*~$^sc2A::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+LShift]
+GuiControl, %Gui%, %String%, *~$^LShift
+   SetTimer, StartStop, -10
+return
+*~$^sc1D::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+LCtrl]
+GuiControl, %Gui%, %String%, *~$^LCtrl
+   SetTimer, StartStop, -10
+return
+*~$^sc38::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+LAlt]
+GuiControl, %Gui%, %String%, *~$^LAlt
+   SetTimer, StartStop, -10
+return
+*~$^sc152::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Insert]
+GuiControl, %Gui%, %String%, *~$^Insert
+   SetTimer, StartStop, -10
+return
+*~$^sc147::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Home]
+GuiControl, %Gui%, %String%, *~$^Home
+   SetTimer, StartStop, -10
+return
+*~$^sc149::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+PgUp]
+GuiControl, %Gui%, %String%, *~$^PgUp
+   SetTimer, StartStop, -10
+return
+*~$^sc153::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Delete]
+GuiControl, %Gui%, %String%, *~$^Delete
+   SetTimer, StartStop, -10
+return
+*~$^sc14F::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+End]
+GuiControl, %Gui%, %String%, *~$^End
+   SetTimer, StartStop, -10
+return
+*~$^sc151::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+PgDn]
+GuiControl, %Gui%, %String%, *~$^PgDn
+   SetTimer, StartStop, -10
+return
+*~$^sc148::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Up]
+GuiControl, %Gui%, %String%, *~$^Up
+   SetTimer, StartStop, -10
+return
+*~$^sc14B::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Left]
+GuiControl, %Gui%, %String%, *~$^Left
+   SetTimer, StartStop, -10
+return
+*~$^sc150::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Down]
+GuiControl, %Gui%, %String%, *~$^Down
+   SetTimer, StartStop, -10
+return
+*~$^sc14D::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Right]
+GuiControl, %Gui%, %String%, *~$^Right
+   SetTimer, StartStop, -10
+return
+*~$^sc29::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+~]
+GuiControl, %Gui%, %String%, *~$^vkC0
+   SetTimer, StartStop, -10
+return
+*~$^vkA1::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+RShift]
+GuiControl, %Gui%, %String%, *~$^RShift
+   SetTimer, StartStop, -10
+return
+*~$^sc1C::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Enter]
+GuiControl, %Gui%, %String%, *~$^Enter
+   SetTimer, StartStop, -10
+return
+*~$^Vk6::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+XButton2]
+GuiControl, %Gui%, %String%, *~$^XButton2
+   SetTimer, StartStop, -10
+return
+*~$^Vk5::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+XButton1]
+GuiControl, %Gui%, %String%, *~$^XButton1
+   SetTimer, StartStop, -10
+return
+*~$^Vk4::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+MButton]
+GuiControl, %Gui%, %String%, *~$^MButton
+      SetTimer, StartStop, -10
+return
+
+*~$^vkA5::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+RAlt]
+GuiControl, %Gui%, %String%, *~$^RAlt
+      SetTimer, StartStop, -10
+return
+
+*~$^vkA3::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+RCtrl]
+GuiControl, %Gui%, %String%, *~$^RCtrl
+      SetTimer, StartStop, -10
+return
+
+*~$^scC::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Minus]
+GuiControl, %Gui%, %String%, *~$^vkBD
+      SetTimer, StartStop, -10
+return
+
+*~$^scD::
+GuiControl, %Gui%, %bin%, Bind [Ctrl+Plus]
+GuiControl, %Gui%, %String%, *~$^vkBB
+      SetTimer, StartStop, -10
+return
+
+
+StartStop:
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Hotkey, *~$scD, Off
+Hotkey, *~$^scD, Off
+Hotkey, *~$^scC, Off
+Hotkey, *~$scC, Off
+Hotkey, *~$sc29, Off
+Hotkey, *~$sc1C, Off
+Hotkey, *~$sc148, Off
+Hotkey, *~$sc14B, Off
+Hotkey, *~$sc150, Off
+Hotkey, *~$sc14D, Off
+Hotkey, *~$sc39, Off
+Hotkey, *~$sc2, Off
+Hotkey, *~$sc3, Off
+Hotkey, *~$sc4, Off
+Hotkey, *~$sc5, Off
+Hotkey, *~$sc6, Off
+Hotkey, *~$sc7, Off
+Hotkey, *~$sc8, Off
+Hotkey, *~$sc9, Off
+Hotkey, *~$scA, Off
+Hotkey, *~$scB, Off
+Hotkey, *~$sc10, Off
+Hotkey, *~$sc11, Off
+Hotkey, *~$sc12, Off
+Hotkey, *~$sc13, Off
+Hotkey, *~$sc14, Off
+Hotkey, *~$sc15, Off
+Hotkey, *~$sc16, Off
+Hotkey, *~$sc17, Off
+Hotkey, *~$sc18, Off
+Hotkey, *~$sc19, Off
+Hotkey, *~$sc1E, Off
+Hotkey, *~$sc1F, Off
+Hotkey, *~$sc20, Off
+Hotkey, *~$sc21, Off
+Hotkey, *~$sc22, Off
+Hotkey, *~$sc23, Off
+Hotkey, *~$sc24, Off
+Hotkey, *~$sc25, Off
+Hotkey, *~$sc26, Off
+Hotkey, *~$sc2C, Off
+Hotkey, *~$sc2D, Off
+Hotkey, *~$sc2E, Off
+Hotkey, *~$sc2F, Off
+Hotkey, *~$sc30, Off
+Hotkey, *~$sc31, Off
+Hotkey, *~$sc32, Off
+Hotkey, *~$sc3B, Off
+Hotkey, *~$sc3C, Off
+Hotkey, *~$sc3D, Off
+Hotkey, *~$sc3E, Off
+Hotkey, *~$sc3F, Off
+Hotkey, *~$sc40, Off
+Hotkey, *~$sc41, Off
+Hotkey, *~$sc42, Off
+Hotkey, *~$sc43, Off
+Hotkey, *~$sc44, Off
+Hotkey, *~$sc57, Off
+Hotkey, *~$sc58, Off
+Hotkey, *~$scE, Off
+Hotkey, *~$scF, Off
+Hotkey, *~$sc3A, Off
+Hotkey, *~$sc2A, Off
+Hotkey, *~$sc38, Off
+Hotkey, *~$sc152, Off
+Hotkey, *~$sc147, Off
+Hotkey, *~$sc149, Off
+Hotkey, *~$sc153, Off
+Hotkey, *~$sc14F, Off
+Hotkey, *~$sc151, Off
+Hotkey, *~$sc35, Off
+Hotkey, *~$sc1B, Off
+Hotkey, *~$sc1A, Off
+Hotkey, *~$sc1, Off
+Hotkey, *~$vkA1, Off
+Hotkey, *~$vkA5, Off
+Hotkey, *~$^vkA1, Off
+Hotkey, *~$Vk6, Off
+Hotkey, *~$Vk5, Off
+Hotkey, *~$Vk4, Off
+Hotkey, *~$vkA3, Off
+Hotkey, *~$^vkA3, Off
+Hotkey, *~$^sc29, Off
+Hotkey, *~$^sc1C, Off
+Hotkey, *~$^sc148, Off
+Hotkey, *~$^sc14B, Off
+Hotkey, *~$^sc150, Off
+Hotkey, *~$^sc14D, Off
+Hotkey, *~$^sc39, Off
+Hotkey, *~$^sc2, Off
+Hotkey, *~$^sc3, Off
+Hotkey, *~$^sc4, Off
+Hotkey, *~$^sc5, Off
+Hotkey, *~$^sc6, Off
+Hotkey, *~$^sc7, Off
+Hotkey, *~$^sc8, Off
+Hotkey, *~$^sc9, Off
+Hotkey, *~$^scA, Off
+Hotkey, *~$^scB, Off
+Hotkey, *~$^sc10, Off
+Hotkey, *~$^sc11, Off
+Hotkey, *~$^sc12, Off
+Hotkey, *~$^sc13, Off
+Hotkey, *~$^sc14, Off
+Hotkey, *~$^sc15, Off
+Hotkey, *~$^sc16, Off
+Hotkey, *~$^sc17, Off
+Hotkey, *~$^sc18, Off
+Hotkey, *~$^sc19, Off
+Hotkey, *~$^sc1E, Off
+Hotkey, *~$^sc1F, Off
+Hotkey, *~$^sc20, Off
+Hotkey, *~$^sc21, Off
+Hotkey, *~$^sc22, Off
+Hotkey, *~$^sc23, Off
+Hotkey, *~$^sc24, Off
+Hotkey, *~$^sc25, Off
+Hotkey, *~$^sc26, Off
+Hotkey, *~$^sc2C, Off
+Hotkey, *~$^sc2D, Off
+Hotkey, *~$^sc2E, Off
+Hotkey, *~$^sc2F, Off
+Hotkey, *~$^sc30, Off
+Hotkey, *~$^sc31, Off
+Hotkey, *~$^sc32, Off
+Hotkey, *~$^sc3B, Off
+Hotkey, *~$^sc3C, Off
+Hotkey, *~$^sc3D, Off
+Hotkey, *~$^sc3E, Off
+Hotkey, *~$^sc3F, Off
+Hotkey, *~$^sc40, Off
+Hotkey, *~$^sc41, Off
+Hotkey, *~$^sc42, Off
+Hotkey, *~$^sc43, Off
+Hotkey, *~$^sc44, Off
+Hotkey, *~$^sc57, Off
+Hotkey, *~$^sc58, Off
+Hotkey, *~$^scE, Off
+Hotkey, *~$^scF, Off
+Hotkey, *~$^sc3A, Off
+Hotkey, *~$^sc2A, Off
+Hotkey, *~$^sc1D, Off
+Hotkey, *~$^sc38, Off
+Hotkey, *~$^sc152, Off
+Hotkey, *~$^sc147, Off
+Hotkey, *~$^sc149, Off
+Hotkey, *~$^sc153, Off
+Hotkey, *~$^sc14F, Off
+Hotkey, *~$^sc151, Off
+Hotkey, *~$^Vk6, Off
+Hotkey, *~$^Vk5, Off
+Hotkey, *~$^Vk4, Off
+Hotkey, *~$^sc35, Off
+return
+
+StartStop1:
+SetBatchLines, -10
+SetWinDelay, -10
+SetControlDelay, -10
+SetMouseDelay, -10
+Hotkey, *~$scD, On
+Hotkey, *~$^scD, On
+Hotkey, *~$^scC, On
+Hotkey, *~$scC, On
+Hotkey, *~$sc29, On
+Hotkey, *~$sc1C, On
+Hotkey, *~$sc148, On
+Hotkey, *~$sc14B, On
+Hotkey, *~$sc150, On
+Hotkey, *~$sc14D, On
+Hotkey, *~$sc39, On
+Hotkey, *~$sc2, On
+Hotkey, *~$sc3, On
+Hotkey, *~$sc4, On
+Hotkey, *~$sc5, On
+Hotkey, *~$sc6, On
+Hotkey, *~$sc7, On
+Hotkey, *~$sc8, On
+Hotkey, *~$sc9, On
+Hotkey, *~$scA, On
+Hotkey, *~$scB, On
+Hotkey, *~$sc10, On
+Hotkey, *~$sc11, On
+Hotkey, *~$sc12, On
+Hotkey, *~$sc13, On
+Hotkey, *~$sc14, On
+Hotkey, *~$sc15, On
+Hotkey, *~$sc16, On
+Hotkey, *~$sc17, On
+Hotkey, *~$sc18, On
+Hotkey, *~$sc19, On
+Hotkey, *~$sc1E, On
+Hotkey, *~$sc1F, On
+Hotkey, *~$sc20, On
+Hotkey, *~$sc21, On
+Hotkey, *~$sc22, On
+Hotkey, *~$sc23, On
+Hotkey, *~$sc24, On
+Hotkey, *~$sc25, On
+Hotkey, *~$sc26, On
+Hotkey, *~$sc2C, On
+Hotkey, *~$sc2D, On
+Hotkey, *~$sc2E, On
+Hotkey, *~$sc2F, On
+Hotkey, *~$sc30, On
+Hotkey, *~$sc31, On
+Hotkey, *~$sc32, On
+Hotkey, *~$sc3B, On
+Hotkey, *~$sc3C, On
+Hotkey, *~$sc3D, On
+Hotkey, *~$sc3E, on
+Hotkey, *~$sc3F, On
+Hotkey, *~$sc40, On
+Hotkey, *~$sc41, On
+Hotkey, *~$sc42, On
+Hotkey, *~$sc43, On
+Hotkey, *~$sc44, On
+Hotkey, *~$sc57, On
+Hotkey, *~$sc58, On
+Hotkey, *~$scE, On
+Hotkey, *~$scF, On
+Hotkey, *~$sc3A, On
+Hotkey, *~$sc2A, On
+Hotkey, *~$sc38, On
+Hotkey, *~$sc152, On
+Hotkey, *~$sc147, On
+Hotkey, *~$sc149, On
+Hotkey, *~$sc153, On
+Hotkey, *~$sc14F, On
+Hotkey, *~$sc151, On
+Hotkey, *~$sc35, On
+Hotkey, *~$sc1B, On
+Hotkey, *~$sc1A, On
+Hotkey, *~$sc1, On
+Hotkey, *~$vkA1, On
+Hotkey, *~$vkA5, On
+Hotkey, *~$^vkA1, On
+Hotkey, *~$Vk6, On
+Hotkey, *~$Vk5, On
+Hotkey, *~$Vk4, On
+Hotkey, *~$vkA3, On
+Hotkey, *~$^vkA3, On
+Hotkey, *~$^sc29, On
+Hotkey, *~$^sc1C, On
+Hotkey, *~$^sc148, On
+Hotkey, *~$^sc14B, On
+Hotkey, *~$^sc150, On
+Hotkey, *~$^sc14D, On
+Hotkey, *~$^sc39, On
+Hotkey, *~$^sc2, On
+Hotkey, *~$^sc3, On
+Hotkey, *~$^sc4, On
+Hotkey, *~$^sc5, On
+Hotkey, *~$^sc6, On
+Hotkey, *~$^sc7, On
+Hotkey, *~$^sc8, On
+Hotkey, *~$^sc9, On
+Hotkey, *~$^scA, On
+Hotkey, *~$^scB, On
+Hotkey, *~$^sc10, On
+Hotkey, *~$^sc11, On
+Hotkey, *~$^sc12, On
+Hotkey, *~$^sc13, On
+Hotkey, *~$^sc14, On
+Hotkey, *~$^sc15, On
+Hotkey, *~$^sc16, On
+Hotkey, *~$^sc17, On
+Hotkey, *~$^sc18, On
+Hotkey, *~$^sc19, On
+Hotkey, *~$^sc1E, On
+Hotkey, *~$^sc1F, On
+Hotkey, *~$^sc20, On
+Hotkey, *~$^sc21, On
+Hotkey, *~$^sc22, On
+Hotkey, *~$^sc23, On
+Hotkey, *~$^sc24, On
+Hotkey, *~$^sc25, On
+Hotkey, *~$^sc26, On
+Hotkey, *~$^sc2C, On
+Hotkey, *~$^sc2D, On
+Hotkey, *~$^sc2E, On
+Hotkey, *~$^sc2F, On
+Hotkey, *~$^sc30, On
+Hotkey, *~$^sc31, On
+Hotkey, *~$^sc32, On
+Hotkey, *~$^sc3B, On
+Hotkey, *~$^sc3C, On
+Hotkey, *~$^sc3D, On
+Hotkey, *~$^sc3E, On
+Hotkey, *~$^sc3F, On
+Hotkey, *~$^sc40, On
+Hotkey, *~$^sc41, On
+Hotkey, *~$^sc42, On
+Hotkey, *~$^sc43, On
+Hotkey, *~$^sc44, On
+Hotkey, *~$^sc57, On
+Hotkey, *~$^sc58, On
+Hotkey, *~$^scE, On
+Hotkey, *~$^scF, On
+Hotkey, *~$^sc3A, On
+Hotkey, *~$^sc2A, On
+Hotkey, *~$^sc1D, On
+Hotkey, *~$^sc38, On
+Hotkey, *~$^sc152, On
+Hotkey, *~$^sc147, On
+Hotkey, *~$^sc149, On
+Hotkey, *~$^sc153, On
+Hotkey, *~$^sc14F, On
+Hotkey, *~$^sc151, On
+Hotkey, *~$^Vk6, On
+Hotkey, *~$^Vk5, On
+Hotkey, *~$^Vk4, On
+Hotkey, *~$^sc35, On
+return
+
+hSliderMZ:
+        SetTimer,Adjust_SliderMZ,0
+fnMZ := Func("MouseMoveMZ").Bind(SliderBackgroundMZ,SliderHandleMZ)
+OnMessage(0x201,fnMZ)
+return
+Adjust_SliderMZ:
+    if(GetKeyState("LButton")){
+       
+        CoordMode,Mouse,Client   
+
+        MouseGetPos,ty
+        
+       (ty<86)?(ty:=86):(ty>186)?(ty:=186)
+
+        ButtonValueMZ:=((ty-86)*+1)-0, ActiveMZ:=1
+        
+        GuiControl,,% SliderBackgroundMZ,% ButtonValueMZ
+        
+        GuiControl,MoveDraw,% SliderHandleMZ,%  "x" ty
+        
+        GuiControl,,% DisplayTextMZ,% ButtonValueMZ
+        
+    }else   {
+        
+        SetTimer,Adjust_SliderMZ,Off
+        
+        ActiveMZ:=0
+        
+        return
+        
+    }
+    return
+
+MouseMoveMZ(SliderBackgroundMZ,SliderHandleMZ) { 
+    
+    MouseGetPos,,,,ctrl,2
+    
+    if(!Active&&(ctrl=SliderBackgroundMZ||ctrl=SliderHandleMZ))
+        
+        SetTimer,Adjust_SliderMZ,0
+        
+}
+return
+
+hSliderF:
+        SetTimer,Adjust_SliderF,0
+fnF := Func("MouseMoveF").Bind(SliderBackgroundF,SliderHandleF)
+OnMessage(0x201,fnF)
+return
+Adjust_SliderF:
+    if(GetKeyState("LButton")){
+       
+        CoordMode,Mouse,Client   
+
+        MouseGetPos,ty
+        
+       (ty<86)?(ty:=86):(ty>186)?(ty:=186)
+
+        ButtonValueF:=((ty-86)*+2)-0, ActiveF:=1
+        
+        GuiControl,,% SliderBackgroundF,% ButtonValueF
+        
+        GuiControl,MoveDraw,% SliderHandleF,%  "x" ty
+        
+        GuiControl,,% DisplayTextF,% ButtonValueF
+        
+    }else   {
+        
+        SetTimer,Adjust_SliderF,Off
+        
+        ActiveF:=0
+        
+        return
+        
+    }
+    return
+
+MouseMoveF(SliderBackgroundF,SliderHandleF) { 
+    
+    MouseGetPos,,,,ctrl,2
+    
+    if(!Active&&(ctrl=SliderBackgroundF||ctrl=SliderHandleF))
+        
+        SetTimer,Adjust_SliderF,0
+        
+}
+return
+
+hSlideri:
+        SetTimer,Adjust_Slideri,0
+fni := Func("MouseMovei").Bind(SliderBackgroundi,SliderHandlei)
+OnMessage(0x201,fni)
+return
+Adjust_Slideri:
+    if(GetKeyState("LButton")){
+       
+        CoordMode,Mouse,Client   
+
+        MouseGetPos,ty
+        
+       (ty<86)?(ty:=86):(ty>186)?(ty:=186)
+
+        ButtonValuei:=((ty-86)*+9)+0, Activei:=1
+        
+        GuiControl,,% SliderBackgroundi,% ButtonValuei
+        
+        GuiControl,MoveDraw,% SliderHandlei,%  "x" ty
+        
+        GuiControl,,% DisplayTexti,% ButtonValuei
+        
+    }else   {
+        
+        SetTimer,Adjust_Slideri,Off
+        
+        Activei:=0
+        
+        return
+        
+    }
+    return
+
+MouseMovei(SliderBackgroundi,SliderHandlei) { 
+    
+    MouseGetPos,,,,ctrl,2
+    
+    if(!Active&&(ctrl=SliderBackgroundi||ctrl=SliderHandlei))
+        
+        SetTimer,Adjust_Slideri,0
+        
+}
+return
+hSliderk:
+        SetTimer,Adjust_Sliderk,0
+fnk := Func("MouseMovek").Bind(SliderBackgroundk,SliderHandlek)
+OnMessage(0x201,fnk)
+return
+Adjust_Sliderk:
+    if(GetKeyState("LButton")){
+       
+        CoordMode,Mouse,Client   
+
+        MouseGetPos,ty
+        
+       (ty<86)?(ty:=86):(ty>186)?(ty:=186)
+
+        ButtonValuek:=((ty-86)*+9)+0, Activek:=1
+        
+        GuiControl,,% SliderBackgroundk,% ButtonValuek
+        
+        GuiControl,MoveDraw,% SliderHandlek,%  "x" ty
+        
+        GuiControl,,% DisplayTextk,% ButtonValuek
+        
+    }else   {
+        
+        SetTimer,Adjust_Sliderk,Off
+        
+        Activek:=0
+        
+        return
+        
+    }
+    return
+
+MouseMovek(SliderBackgroundk,SliderHandlek) { 
+    
+    MouseGetPos,,,,ctrl,2
+    
+    if(!Active&&(ctrl=SliderBackgroundk||ctrl=SliderHandlek))
+        
+        SetTimer,Adjust_Sliderk,0
+        
+}
+return
+
+hSliderk1:
+        SetTimer,Adjust_Sliderk1,0
+fnk1 := Func("MouseMovek1").Bind(SliderBackgroundk1,SliderHandlek1)
+OnMessage(0x201,fnk1)
+return
+Adjust_Sliderk1:
+    if(GetKeyState("LButton")){
+       
+        CoordMode,Mouse,Client   
+
+        MouseGetPos,ty
+        
+       (ty<86)?(ty:=86):(ty>186)?(ty:=186)
+
+        ButtonValuek1:=((ty-86)*+2)+0, Activek1:=1
+        
+        GuiControl,,% SliderBackgroundk1,% ButtonValuek1
+        
+        GuiControl,MoveDraw,% SliderHandlek1,%  "x" ty
+        
+        GuiControl,,% DisplayTextk1,% ButtonValuek1
+        
+    }else   {
+        
+        SetTimer,Adjust_Sliderk1,Off
+        
+        Activek1:=0
+        
+        return
+        
+    }
+    return
+
+MouseMovek1(SliderBackgroundk1,SliderHandlek1) { 
+    
+    MouseGetPos,,,,ctrl,2
+    
+    if(!Active&&(ctrl=SliderBackgroundk1||ctrl=SliderHandlek1))
+        
+        SetTimer,Adjust_Sliderk1,0
+        
+}
+return
+
+hSliderk5:
+        SetTimer,Adjust_Sliderk5,0
+fnk5 := Func("MouseMovek5").Bind(SliderBackgroundk5,SliderHandlek5)
+OnMessage(0x201,fnk5)
+return
+Adjust_Sliderk5:
+    if(GetKeyState("LButton")){
+       
+        CoordMode,Mouse,Client   
+
+        MouseGetPos,ty
+        
+       (ty<86)?(ty:=86):(ty>186)?(ty:=186)
+
+        ButtonValuek5:=((ty-86)*+2)+0, Activek5:=1
+        
+        GuiControl,,% SliderBackgroundk5,% ButtonValuek5
+        
+        GuiControl,MoveDraw,% SliderHandlek5,%  "x" ty
+        
+        GuiControl,,% DisplayTextk5,% ButtonValuek5
+        
+    }else   {
+        
+        SetTimer,Adjust_Sliderk5,Off
+        
+        Activek5:=0
+        
+        return
+        
+    }
+    return
+
+MouseMovek5(SliderBackgroundk5,SliderHandlek5) { 
+    
+    MouseGetPos,,,,ctrl,2
+    
+    if(!Active&&(ctrl=SliderBackgroundk5||ctrl=SliderHandlek5))
+        
+        SetTimer,Adjust_Sliderk5,0
+        
+}
+Return
+
+Clears:
+GuiControl, Comm11:, com2,
+return
+Clear:
+GuiControl, Home:, Title,
+return
+BindAir:
+If Air
+Hotkey, %MyHotKeyStringAir%, keyStringAir, off, useerrorlevel
+Gui, Submit, NoHide
+Hotkey, %MyHotKeyStringAir%, keyStringAir, on, useerrorlevel
+Return
+KeyStringAir:
+If Air
+++countAir1
+if countAir1 = 1
+{
+Process_Suspend(Process)
+}
+else if countAir1 = 2
+{
+Process_Resume(Process)
+countAir1 := 0
+}
+return
+Process_Resume(Process)
+return
+
+Process_Suspend(PID_or_Name){
+
+    PID := (InStr(PID_or_Name,".")) ? ProcExist(PID_or_Name) : PID_or_Name
+
+    h:=DllCall("OpenProcess", "uInt", 0x1F0FFF, "Int", 0, "Int", pid)
+
+    If !h   
+
+        Return -1
+
+    DllCall("ntdll.dll\NtSuspendProcess", "Int", h)
+
+    DllCall("CloseHandle", "Int", h)
+
+}
+
+
+
+Process_Resume(PID_or_Name){
+
+    PID := (InStr(PID_or_Name,".")) ? ProcExist(PID_or_Name) : PID_or_Name
+
+    h:=DllCall("OpenProcess", "uInt", 0x1F0FFF, "Int", 0, "Int", pid)
+
+    If !h   
+
+        Return -1
+
+    DllCall("ntdll.dll\NtResumeProcess", "Int", h)
+
+    DllCall("CloseHandle", "Int", h)
+
+}
+
+
+
+ProcExist(PID_or_Name=""){
+
+    Process, Exist, % (PID_or_Name="") ? DllCall("GetCurrentProcessID") : PID_or_Name
+
+    Return Errorlevel
+
+}
+return
+
+
+
+hSliderSpeed:
+        SetTimer,Adjust_SliderSpeed,0
+fnSpeed := Func("MouseMoveSpeed").Bind(SliderBackgroundSpeed,SliderHandleSpeed)
+OnMessage(0x201,fnSpeed)
+return
+Adjust_SliderSpeed:
+    if(GetKeyState("LButton")){
+       
+        CoordMode,Mouse,Client   
+
+        MouseGetPos,ty
+        
+       (ty<110)?(ty:=110):(ty>182)?(ty:=182)
+
+        ButtonValueSpeed:=((ty-110)*+2)+56, ActiveSpeed:=1
+        
+        GuiControl,,% SliderBackgroundSpeed,% ButtonValueSpeed
+        
+        GuiControl,MoveDraw,% SliderHandleSpeed,%  "x" ty
+        
+        GuiControl,,% DisplayTextSpeed,% ButtonValueSpeed
+        
+    }else   {
+        
+        SetTimer,Adjust_SliderSpeed,Off
+        
+        ActiveSpeed:=0
+        
+        return
+        
+    }
+    return
+
+MouseMoveSpeed(SliderBackgroundSpeed,SliderHandleSpeed) { 
+    
+    MouseGetPos,,,,ctrl,2
+    
+    if(!Active&&(ctrl=SliderBackgroundSpeed||ctrl=SliderHandleSpeed))
+        
+        SetTimer,Adjust_SliderSpeed,0
+        
+}
+return
+
+StartStop5:
+Hotkey, *~$ESC, Off
+Hotkey, *~$!F4, Off
+Hotkey, *~$Enter, Off
+Hotkey, *~$LWin, Off
+BlockHit := !BlockHit
+White1 := !White1
+Hotkey, *~$LButton, Off
+Hotkey, *~$LButton Up, Off
+Hotkey, *~$RButton, Off
+Hotkey, *~$Vk2, Off
+Hotkey, *~$Vk2 Up, Off
+Hotkey, *~$vk57, Off
+Hotkey, *~$vk57 Up, Off
+Hotkey, *~$W, Off
+Hotkey, *~$vk1B, Off
+Hotkey, *~$W Up, Off
+Hotkey, *~$1, OFF
+Hotkey, *~$2, OFF
+Hotkey, *~$3, OFF
+Hotkey, *~$4, OFF
+Hotkey, *~$5, OFF
+Hotkey, *~$6, OFF
+Hotkey, *~$7, OFF
+Hotkey, *~$8, OFF
+Hotkey, *~$9, OFF
+Double = 2
+Double := !Double
+Strafe1 := !Strafe1
+ButtonValueF = 100
+ButtonValueh = 65
+ButtonValuei = 0
+ButtonValueK = 0
+ButtonValueK1 = 56
+ButtonValueK5 = 56
+Clicked1 = 1
+Clicked = 1
+Ones1 = 1
+Ones = 1
+S = S
+D = D
+S1 = S
+D1 = D
+Keys = /
+SkyS = S
+SkyD = D
+Off1 = OFF
+Changes =
+Changes1 =
+Changes2 =
+Global = 
+ButtonValueSpeed = 240
+ABOBA = 0
+return
